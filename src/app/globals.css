@@ -3,25 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-secondary: #0ea5e9;
-  --color-secondary-dark: #0284c7;
-  --color-accent: #06b6d4;
-  --color-accent-dark: #0891b2;
-  --color-text: #f8fafc;
-  --color-text-dark: #94a3b8;
-  --color-background: #0f172a;
-  --color-background-dark: #020617;
+  --color-space: #030305;
+  --color-space-light: #0a0a0f;
+  --color-corona-bright: #f59e0b;
+  --color-corona-mid: #d97706;
+  --color-corona-dark: #92400e;
+  --color-accent-blue: #3b82f6;
+  --color-accent-blue-dark: #1d4ed8;
+  --color-star: #f8fafc;
+  --color-space-dust: #451a03;
+}
+
+@layer base {
+  body {
+    @apply bg-[#030305] text-amber-100/90 min-h-screen relative overflow-x-hidden font-space;
+    background-image: 
+      radial-gradient(circle at center, rgba(103, 45, 10, 0.08), transparent 35%),
+      radial-gradient(circle at 25% 25%, rgba(102, 45, 9, 0.05), transparent 25%),
+      radial-gradient(circle at 75% 75%, rgba(67, 30, 6, 0.05), transparent 25%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-amber-200 via-amber-400 to-amber-300 bg-clip-text text-transparent;
+  }
+
+  /* Ensure motion elements maintain visibility */
+  .motion-content {
+    @apply relative z-10;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+}
+
+@layer utilities {
+  .font-space {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  }
+
+  .font-orbitron {
+    font-family: var(--font-orbitron), system-ui, sans-serif;
+  }
 }
 
 @keyframes shooting-star {
   0% {
-    transform: translateX(-100px) translateY(0);
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
-    transform: translateX(200px) translateY(100px);
+    transform: translate(2000%, 0) rotate(0deg);
     opacity: 0;
   }
 }
@@ -35,29 +77,50 @@
   }
 }
 
-@keyframes glow {
+@keyframes corona-pulse {
   0%, 100% {
-    opacity: 0.5;
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.4;
   }
   50% {
     opacity: 1;
   }
 }
 
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400;
-}
-
 .card-3d {
-  @apply relative transition-transform duration-500 ease-out;
+  @apply relative transition-transform duration-500 ease-out backdrop-blur-md;
   transform-style: preserve-3d;
   transform: perspective(1000px);
+  background: rgba(3, 3, 5, 0.4);
+  border: 1px solid rgba(245, 158, 11, 0.1);
 }
 
 .card-3d:hover {
   transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  background: rgba(3, 3, 5, 0.5);
+  border-color: rgba(245, 158, 11, 0.2);
 }
 
-body {
-  @apply bg-slate-900 text-slate-100;
+.singularity-glow {
+  @apply relative;
+}
+
+.singularity-glow::before {
+  content: "";
+  @apply absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 opacity-70 blur-sm;
+  animation: corona-pulse 4s ease-in-out infinite;
+}
+
+.space-bg {
+  background: radial-gradient(circle at center, var(--color-space-dust) 0%, var(--color-space) 100%);
 }

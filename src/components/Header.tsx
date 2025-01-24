@@ -18,26 +18,40 @@ export default function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-900/75 border-b border-slate-800"
+      className="fixed top-0 left-0 right-0 z-50"
     >
-      <nav className="container mx-auto px-4 py-4">
+      {/* Layered background effects */}
+      <div className="absolute inset-0 backdrop-blur-md bg-[#030305]/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-amber-900/10 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-900/50 to-transparent" />
+      
+      <nav className="container relative mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="relative"
           >
-            <Link href="/" className="text-xl font-bold text-gradient">
-              Joe Heath
-            </Link>
+            <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              className="relative"
+            >
+              <Link href="/" className="relative text-xl font-bold text-gradient">
+                Joe Heath
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Mobile menu button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
+            className="relative md:hidden p-2 text-amber-200/70 hover:text-amber-200 focus:outline-none group"
           >
-            <div className="w-6 h-5 flex flex-col justify-between">
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative w-6 h-5 flex flex-col justify-between">
               <span className={`w-full h-0.5 bg-current transform transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
               <span className={`w-full h-0.5 bg-current transition-opacity ${isOpen ? "opacity-0" : "opacity-100"}`} />
               <span className={`w-full h-0.5 bg-current transform transition-transform ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
@@ -51,10 +65,14 @@ export default function Header() {
                 key={item.href}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="relative group"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
               >
+                <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/0 to-orange-500/0 rounded-lg blur-sm group-hover:from-amber-500/20 group-hover:to-orange-500/20 transition-all duration-300" />
                 <Link
                   href={item.href}
-                  className="text-slate-300 hover:text-white transition-colors"
+                  className="relative text-amber-200/70 hover:text-amber-200 transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -67,17 +85,21 @@ export default function Header() {
         <motion.div
           initial={false}
           animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-          className="md:hidden overflow-hidden"
+          className="relative md:hidden overflow-hidden"
         >
           <div className="py-4 space-y-4">
             {menuItems.map((item) => (
               <motion.div
                 key={item.href}
                 whileTap={{ scale: 0.95 }}
+                className="relative group"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
               >
+                <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/0 to-orange-500/0 rounded-lg blur-sm group-hover:from-amber-500/20 group-hover:to-orange-500/20 transition-all duration-300" />
                 <Link
                   href={item.href}
-                  className="block text-slate-300 hover:text-white transition-colors"
+                  className="relative block text-amber-200/70 hover:text-amber-200 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

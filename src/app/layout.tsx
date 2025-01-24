@@ -1,24 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Orbitron } from "next/font/google";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-
+import RootLayoutClient from "@/components/RootLayoutClient";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Joe Heath - Full Stack Developer",
-  description: "Portfolio and blog of Joe Heath, a full stack web developer specializing in React and Next.js applications.",
+  title: "Joe Heath - Full Stack Web Developer and AI Enthusiast",
+  description: "Portfolio and blog of Joe Heath, a full stack web developer specializing in innovative web applications and AI solutions.",
 };
 
 export default function RootLayout({
@@ -27,13 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
-        <Header />
-        <div className="flex-grow pt-20">
-          {children}
-        </div>
-        <Footer />
+    <html lang="en" className="h-full">
+      <body className={`${spaceGrotesk.variable} ${orbitron.variable} font-space antialiased`}>
+        <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>
   );

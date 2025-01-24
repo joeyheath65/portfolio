@@ -1,71 +1,110 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface Star {
   id: number;
-  x: number;
-  y: number;
-  size: number;
-  duration: number;
+  delay: number;
+  top: number;
+  left: number;
 }
 
 export default function AnimatedBackground() {
-  const [stars, setStars] = useState<Star[]>([]);
+    const [staticStars, setStaticStars] = useState<Star[]>([]);
+    const [shootingStars, setShootingStars] = useState<Star[]>([]);
 
-  useEffect(() => {
-    const createStar = () => {
-      const id = Math.random();
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
-      const size = Math.random() * 2 + 1;
-      const duration = Math.random() * 2 + 2;
-      
-      return { id, x, y, size, duration };
-    };
+    useEffect(() => {
+    // Create static stars
+        const newStaticStars = Array.from({ length: 50 }, (_, i) => ({
+            id: i,
+            delay: Math.random() * 5,
+            top: Math.random() * 100,
+            left: Math.random() * 100,
+        }));
+        setStaticStars(newStaticStars);
 
-    const addStar = () => {
-      setStars(prev => [...prev, createStar()]);
-      setTimeout(() => {
-        setStars(prev => prev.slice(1));
-      }, 3000);
-    };
+    // Create shooting stars
+        const newShootingStars = Array.from({ length: 3 }, (_, i) => ({
+            id: i,
+            delay: Math.random() * 5,
+            top: Math.random() * 80,
+            left: -20,                // -20 creates the star off screen - dont reduce this because its ugly
+        }));
+        setShootingStars(newShootingStars);
 
-    const interval = setInterval(() => {
-      if (stars.length < 5) {
-        addStar();
-      }
-    }, 2000);
+    // Refresh shooting stars periodically
+        const interval = setInterval(() => {
+            setShootingStars(prev => prev.map(star => ({
+            ...star,
+            delay: Math.random() * 5,
+            top: Math.random() * 90,
+            left: -20,                  // -20 creates the star off screen - dont reduce this because its ugly
+            })));
+        }, 5000);
 
     return () => clearInterval(interval);
-  }, [stars]);
+        }, []);
 
-  return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" 
-             style={{ 
-               backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-               backgroundSize: "50px 50px"
-             }} 
-        />
+    return (
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 space-bg">
+            {/* Corona effect */}
+            <div 
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96"
+                style={{
+                background: "radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, transparent 70%)",
+                filter: "blur(30px)",
+                }}
+            />
+
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 opacity-[0.03]" 
+                style={{ 
+                backgroundImage: "radial-gradient(circle at 1px 1px, rgb(251, 191, 36) 1px, transparent 0)",
+                backgroundSize: "50px 50px"
+                }} 
+            />
         
-        {/* Animated stars */}
-        {stars.map(star => (
-          <div
-            key={star.id}
-            className="absolute h-px w-[100px] rotate-[35deg]"
-            style={{
-              left: `${star.x}%`,
-              top: `${star.y}%`,
-              animation: `shooting-star ${star.duration}s linear forwards`
-            }}
-          >
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
-          </div>
+            {/* Static stars */}
+            {staticStars.map((star) => (
+                <motion.div
+                key={star.id}
+                className="absolute w-1 h-1 bg-amber-200/80"
+                style={{
+                    top: `${star.top}%`,
+                    left: `${star.left}%`,
+                }}
+                animate={{
+                    opacity: [0.4, 1, 0.4],
+                    scale: [0.8, 1, 0.8],
+                }}
+                transition={{
+                    duration: 3,
+                    delay: star.delay,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+                />
+            ))}
+        
+            {/* Shooting stars */}
+            {shootingStars.map(star => (
+                <div
+                key={`shooting-${star.id}`}
+                className="absolute h-px w-[100px]"
+                style={{
+                    left: `${star.left}%`,
+                    top: `${star.top}%`,
+                    transform: "rotate(0deg)",
+                    transformOrigin: "left center",
+                    animation: `shooting-star 3s linear ${star.delay}s infinite`,
+                }}
+                >
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-80" />
+            </div>
         ))}
-      </div>
+        </div>
     </div>
-  );
-} 
+    );
+    } 
