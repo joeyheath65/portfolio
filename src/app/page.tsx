@@ -34,7 +34,7 @@ export default function Home() {
                 <span className="inline-block relative">
                   <span className="absolute -inset-2 bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-amber-600/20 rounded-lg blur-lg" />
                   <span className="relative bg-gradient-to-r from-amber-200 via-amber-400 to-amber-300 bg-clip-text text-transparent font-extrabold tracking-tight">
-                    Joe Heath
+                    Welcome to my portfolio!
                   </span>
                 </span>
               </h1>
@@ -48,7 +48,7 @@ export default function Home() {
               className="mb-6 sm:mb-8"
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl text-amber-100/80">
-                Full Stack Developer & AI Enthusiast
+                I&apos;m Joe Heath, a full stack developer and AI enthusiast.
               </h2>
             </motion.div>
             
