@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ContactForm from "@/components/ContactForm";
 
