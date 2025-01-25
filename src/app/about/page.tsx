@@ -7,7 +7,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import ProfileImage from "@/components/ProfileImage";
 
 export default function About() {
-  const [activeSection, setActiveSection] = useState<'about' | 'expertise'>('about');
+  const [activeSection, setActiveSection] = useState<"about" | "expertise">("about");
 
   return (
     <>
@@ -17,9 +17,9 @@ export default function About() {
           {/* About Section */}
           <motion.div
             initial={{ opacity: 1 }}
-            animate={{ opacity: activeSection === 'about' ? 1 : 0, x: activeSection === 'about' ? 0 : -100 }}
+            animate={{ opacity: activeSection === "about" ? 1 : 0, x: activeSection === "about" ? 0 : -100 }}
             transition={{ duration: 0.5 }}
-            className={`${activeSection === 'about' ? 'block' : 'hidden'}`}
+            className={`${activeSection === "about" ? "block" : "hidden"}`}
           >
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
               {/* Profile Image */}
@@ -68,7 +68,7 @@ export default function About() {
 
                   {/* Navigation Button */}
                   <motion.button
-                    onClick={() => setActiveSection('expertise')}
+                    onClick={() => setActiveSection("expertise")}
                     className="mt-8 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg text-white font-semibold hover:from-amber-600 hover:to-orange-600 transition-all duration-200"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -83,14 +83,14 @@ export default function About() {
           {/* Expertise Section */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: activeSection === 'expertise' ? 1 : 0, x: activeSection === 'expertise' ? 0 : 100 }}
+            animate={{ opacity: activeSection === "expertise" ? 1 : 0, x: activeSection === "expertise" ? 0 : 100 }}
             transition={{ duration: 0.5 }}
-            className={`${activeSection === 'expertise' ? 'block' : 'hidden'}`}
+            className={`${activeSection === "expertise" ? "block" : "hidden"}`}
           >
             <div className="relative z-10">
               <div className="flex items-center mb-8">
                 <motion.button
-                  onClick={() => setActiveSection('about')}
+                  onClick={() => setActiveSection("about")}
                   className="mr-4 text-amber-200/70 hover:text-amber-200 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

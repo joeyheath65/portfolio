@@ -76,7 +76,7 @@ export default function Portfolio() {
           >
             <h1 className="text-4xl font-bold mb-4 text-gradient">Portfolio</h1>
             <p className="text-amber-100/70 text-lg max-w-2xl mx-auto">
-              Or should we say, 'Joe-folio'? No ?
+              Or should we say, &apos;Joe-folio&apos;? No ?
               Explore a selection of my recent projects, showcasing expertise in 
               React, Next.js, creative innovation, and custom use AI integrations.
             </p>
