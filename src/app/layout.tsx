@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body className={`${spaceGrotesk.variable} ${orbitron.variable} font-space antialiased`}>
+    <html lang="en" className="h-full bg-[#030305] text-[#cbd5e1]">
+      <body className={`${spaceGrotesk.variable} ${orbitron.variable} font-space antialiased bg-[#030305] text-[#cbd5e1]`}>
         <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>

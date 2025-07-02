@@ -13,15 +13,15 @@ export default function ProfileImage({ imageUrl }: ProfileImageProps) {
       <div className="absolute inset-0 rounded-full overflow-hidden">
         {imageUrl ? (
           <Image
-            src={imageUrl}
+            src="/images/profile/joeheath.webp"
             alt="Profile"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 192px, 384px"
           />
         ) : (
-          <div className="w-full h-full bg-[#0a0a0f] border-[6px] border-[#0a0a0f]">
-            <div className="w-full h-full flex items-center justify-center text-amber-300 text-6xl font-bold">
+          <div className="w-full h-full bg-[#0a0a0f] border-[6px] border-[#334155]">
+            <div className="w-full h-full flex items-center justify-center text-[#cbd5e1] text-6xl font-bold">
               JH
             </div>
           </div>
@@ -29,7 +29,7 @@ export default function ProfileImage({ imageUrl }: ProfileImageProps) {
       </div>
       {/* Corona effect */}
       <motion.div
-        className="absolute -inset-3 rounded-full opacity-20 blur-xl bg-amber-400"
+        className="absolute -inset-3 rounded-full opacity-20 blur-xl bg-[#334155]"
         animate={{
           scale: [1, 1.1, 1],
         }}
@@ -40,7 +40,7 @@ export default function ProfileImage({ imageUrl }: ProfileImageProps) {
         }}
       />
       <motion.div
-        className="absolute -inset-1 rounded-full bg-gradient-to-r from-amber-500 via-orange-400 to-amber-600"
+        className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#64748b] via-[#334155] to-[#cbd5e1]"
         animate={{
           scale: [1, 1.05, 1],
         }}
@@ -52,7 +52,7 @@ export default function ProfileImage({ imageUrl }: ProfileImageProps) {
       />
       {/* Inner glow */}
       <motion.div
-        className="absolute inset-1 rounded-full bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500 opacity-20 blur-sm"
+        className="absolute inset-1 rounded-full bg-gradient-to-r from-[#334155] via-[#64748b] to-[#cbd5e1] opacity-20 blur-sm"
         animate={{
           opacity: [0.2, 0.3, 0.2],
         }}

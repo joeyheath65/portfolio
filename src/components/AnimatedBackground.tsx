@@ -53,57 +53,64 @@ export default function AnimatedBackground() {
             <div 
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96"
                 style={{
-                background: "radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, transparent 70%)",
-                filter: "blur(30px)",
+                background: "radial-gradient(circle at center, #0a0f1f 0%, #0d1b3a 40%, #00000000 80%)",
+                filter: "blur(40px)",
                 }}
             />
 
             {/* Grid pattern overlay */}
-            <div className="absolute inset-0 opacity-[0.03]" 
+            <div className="absolute inset-0 opacity-[0.06]" 
                 style={{ 
-                backgroundImage: "radial-gradient(circle at 1px 1px, rgb(251, 191, 36) 1px, transparent 0)",
-                backgroundSize: "50px 50px"
+                backgroundImage: "radial-gradient(circle at 1px 1px, #5624fb 1px, #0000 0)",
+                backgroundSize: "60px 60px"
                 }} 
             />
         
             {/* Static stars */}
-            {staticStars.map((star) => (
+            {staticStars.map((star, i) => (
                 <motion.div
-                key={star.id}
-                className="absolute w-1 h-1 bg-amber-200/80"
-                style={{
+                  key={star.id}
+                  className="absolute w-1 h-1"
+                  style={{
                     top: `${star.top}%`,
                     left: `${star.left}%`,
-                }}
-                animate={{
-                    opacity: [0.4, 1, 0.4],
-                    scale: [0.8, 1, 0.8],
-                }}
-                transition={{
+                    background: i % 5 === 0
+                      ? "#5624fb80" // blue accent (50% opacity)
+                      : "#60a5faCC" // blue accent (80% opacity)
+                  }}
+                  animate={{
+                    opacity: [0.3, 1, 0.3],
+                    scale: [0.7, 1, 0.7],
+                  }}
+                  transition={{
                     duration: 3,
                     delay: star.delay,
                     repeat: Infinity,
                     ease: "easeInOut",
-                }}
+                  }}
                 />
             ))}
         
             {/* Shooting stars */}
-            {shootingStars.map(star => (
+            {shootingStars.map((star, i) => (
                 <div
-                key={`shooting-${star.id}`}
-                className="absolute h-px w-[100px]"
-                style={{
+                  key={`shooting-${star.id}`}
+                  className="absolute h-px w-[120px]"
+                  style={{
                     left: `${star.left}%`,
                     top: `${star.top}%`,
                     transform: "rotate(0deg)",
                     transformOrigin: "left center",
                     animation: `shooting-star 3s linear ${star.delay}s infinite`,
-                }}
+                  }}
                 >
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-80" />
-            </div>
-        ))}
+                  <div className={
+                    i % 2 === 0
+                      ? "h-px w-full bg-gradient-to-r from-[#0000] via-[#83bafc] to-[#0000] opacity-90"
+                      : "h-px w-full bg-gradient-to-r from-[#0000] via-[#5624fb] to-[#0000] opacity-80"
+                  } />
+                </div>
+            ))}
         </div>
     </div>
     );

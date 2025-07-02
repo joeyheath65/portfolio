@@ -22,8 +22,8 @@ export default function Header() {
     >
       {/* Layered background effects */}
       <div className="absolute inset-0 backdrop-blur-md bg-[#030305]/80" />
-      <div className="absolute inset-0 bg-gradient-to-b from-amber-900/10 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-900/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1e293b]/20 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#334155]/50 to-transparent" />
       
       <nav className="container relative mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -32,7 +32,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             className="relative"
           >
-            <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -inset-2 bg-gradient-to-r from-[#64748b]/20 to-[#334155]/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
@@ -48,9 +48,9 @@ export default function Header() {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="relative md:hidden p-2 text-amber-200/70 hover:text-amber-200 focus:outline-none group"
+            className="relative md:hidden p-2 text-[#94a3b8] hover:text-[#cbd5e1] focus:outline-none group"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="relative w-6 h-5 flex flex-col justify-between">
               <span className={`w-full h-0.5 bg-current transform transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
               <span className={`w-full h-0.5 bg-current transition-opacity ${isOpen ? "opacity-0" : "opacity-100"}`} />
@@ -69,10 +69,10 @@ export default function Header() {
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
               >
-                <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/0 to-orange-500/0 rounded-lg blur-sm group-hover:from-amber-500/20 group-hover:to-orange-500/20 transition-all duration-300" />
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#64748b]/0 to-[#334155]/0 rounded-lg blur-sm group-hover:from-[#64748b]/20 group-hover:to-[#334155]/20 transition-all duration-300" />
                 <Link
                   href={item.href}
-                  className="relative text-amber-200/70 hover:text-amber-200 transition-colors"
+                  className="relative text-[#94a3b8] hover:text-[#cbd5e1] transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -96,10 +96,10 @@ export default function Header() {
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
               >
-                <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/0 to-orange-500/0 rounded-lg blur-sm group-hover:from-amber-500/20 group-hover:to-orange-500/20 transition-all duration-300" />
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#64748b]/0 to-[#334155]/0 rounded-lg blur-sm group-hover:from-[#64748b]/20 group-hover:to-[#334155]/20 transition-all duration-300" />
                 <Link
                   href={item.href}
-                  className="relative block text-amber-200/70 hover:text-amber-200 transition-colors"
+                  className="relative block text-[#94a3b8] hover:text-[#cbd5e1] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

@@ -4,23 +4,31 @@
 
 :root {
   --color-space: #030305;
-  --color-space-light: #0a0a0f;
-  --color-corona-bright: #f59e0b;
-  --color-corona-mid: #d97706;
-  --color-corona-dark: #92400e;
-  --color-accent-blue: #3b82f6;
-  --color-accent-blue-dark: #1d4ed8;
+  --color-space-light: #0a0f1f;
+  --color-corona-bright: #cbd5e1;
+  --color-corona-mid: #94a3b8;
+  --color-corona-dark: #334155;
+  --color-accent-blue: #64748b;
+  --color-accent-blue-dark: #1e293b;
   --color-star: #f8fafc;
-  --color-space-dust: #451a03;
+  --color-space-dust: #1e293b;
 }
 
 @layer base {
   body {
-    @apply bg-[#030305] text-amber-100/90 min-h-screen relative overflow-x-hidden font-space;
+    @apply bg-[#030305] text-[#cbd5e1] min-h-screen relative overflow-x-hidden font-space;
     background-image: 
-      radial-gradient(circle at center, rgba(103, 45, 10, 0.08), transparent 35%),
-      radial-gradient(circle at 25% 25%, rgba(102, 45, 9, 0.05), transparent 25%),
-      radial-gradient(circle at 75% 75%, rgba(67, 30, 6, 0.05), transparent 25%);
+      /* Dim vignette corners */
+      radial-gradient(ellipse at 50% 120%, #030305 60%, #1e293b00 100%),
+      /* Subtle blue steel nebula */
+      radial-gradient(circle at 70% 20%, #33415533 0%, #0000 60%),
+      radial-gradient(circle at 30% 80%, #64748b22 0%, #0000 60%),
+      /* Faint star field */
+      repeating-radial-gradient(circle at 60% 40%, #cbd5e10a 0.5px, #0000 2px, #0000 20px),
+      /* Existing gradients for depth */
+      radial-gradient(circle at center, #33415533 0%, #0000 35%),
+      radial-gradient(circle at 25% 25%, #1e293b22 0%, #0000 25%),
+      radial-gradient(circle at 75% 75%, #64748b22 0%, #0000 25%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -30,7 +38,7 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-gradient-to-r from-amber-200 via-amber-400 to-amber-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#cbd5e1] via-[#64748b] to-[#94a3b8] bg-clip-text text-transparent;
   }
 
   /* Ensure motion elements maintain visibility */
@@ -98,17 +106,19 @@
 }
 
 .card-3d {
-  @apply relative transition-transform duration-500 ease-out backdrop-blur-md;
+  @apply relative transition-transform duration-500 ease-out backdrop-blur-md shadow-2xl;
   transform-style: preserve-3d;
   transform: perspective(1000px);
-  background: rgba(3, 3, 5, 0.4);
-  border: 1px solid rgba(245, 158, 11, 0.1);
+  background: #1e293bcc;
+  border: 1px solid #33415544;
+  box-shadow: 0 8px 32px 0 #030305cc, 0 1.5px 8px 0 #64748b33;
 }
 
 .card-3d:hover {
   transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
-  background: rgba(3, 3, 5, 0.5);
-  border-color: rgba(245, 158, 11, 0.2);
+  background: #334155cc;
+  border-color: #64748b66;
+  box-shadow: 0 12px 48px 0 #030305ee, 0 2px 12px 0 #64748b44;
 }
 
 .singularity-glow {
@@ -117,10 +127,14 @@
 
 .singularity-glow::before {
   content: "";
-  @apply absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 opacity-70 blur-sm;
+  @apply absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#64748b] via-[#334155] to-[#cbd5e1] opacity-70 blur-sm;
   animation: corona-pulse 4s ease-in-out infinite;
 }
 
 .space-bg {
-  background: radial-gradient(circle at center, var(--color-space-dust) 0%, var(--color-space) 100%);
+  background:
+    radial-gradient(ellipse at 50% 120%, #030305 60%, #1e293b00 100%),
+    radial-gradient(circle at 60% 30%, #33415544 0%, #0000 70%),
+    radial-gradient(circle at 20% 80%, #64748b33 0%, #0000 70%),
+    radial-gradient(circle at center, #1e293b 0%, #030305 100%);
 }

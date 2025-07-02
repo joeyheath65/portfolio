@@ -9,14 +9,14 @@ import ProjectModal from "@/components/ProjectModal";
 
 const projects = [
   {
-    title: "Youth Sports Page",
+    title: "Web Application for Little League",
     description: "A modern web application built with React and JavaScript with an OpenAI powered chatbot.",
     tech: ["JavaScript", "React", "TypeScript", "AI", "OpenAI", "Firebase"],
     image: "/images/projects/fll-home.jpg",
     link: "#",
-    longDescription: "This project showcases the integration of modern AI capabilities with practical home town applications. It features real-time processing, dynamic and modular design, an authentication gateway for secure management of the page content, and live game score updates.",
+    longDescription: "This project showcases the integration of modern AI capabilities with practical home town applications. It features multiple web integrations, dynamic and modular design, an authentication gateway for secure management of the page content, and live game score updates.",
     features: [
-      "Real-time AI chat modal with over 1000 pages of content",
+      "Real-time AI chatbot with over 1000 pages of content",
       "In page calculators",
       "Responsive and modular design",
       "Multiple 3rd party integrations (Facebook, Google Calendar, etc.)"
@@ -25,21 +25,21 @@ const projects = [
     liveDemo: "https://floresvillelittleleague.com"
   },
   {
-    title: "CheckSwingAI",
-    description: "AI powered chatbot modal to answer questions about the came and local league.",
-    tech: ["Python", "Node.js", "React", "Typescript","Vercel"],
-    image: "/images/projects/fll-checksw.jpg",
+    title: "Lawn Dart Development",
+    description: "My side venture, building web applications for small businesses and non-profits.",
+    tech: ["Python", "Node.js", "Next.js", "React", "Typescript", "AI","Firebase"],
+    image: "/images/projects/ld-dev.webp",
     link: "#",
     longDescription: "A convenient modal that allows users to ask questions about the league and get answers in seconds. Also can explain rules and regulations of the game, interpret complex game situations and offer a ruling as an umpire would.",
     features: [
-      "AI chat modal with over 1000 pages of content",
+      "AI chatbot that will help you think through your next project",
       "Modular and scalable design",
       "OpenAI integration",
       "Function calling abilities",
       "Easy to use and deploy! Self packaged for seamless integration into any website"
     ],
     githubLink: "https://github.com/joeyheath65/project2",
-    liveDemo: "https://checkswingai.abetivedigital.com"
+    liveDemo: "https://lawndart.dev"
   },
   {
     title: "Focus AI",
