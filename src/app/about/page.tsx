@@ -120,7 +120,9 @@ export default function About() {
                       "Node.js",
                       "Python",
                       "Tailwind CSS",
-                      "MongoDB",
+                      "JavaScript",
+                      "HTML",
+                      "Firebase",
                       "PostgreSQL",
                       "REST APIs"
                     ].map((skill) => (
@@ -282,10 +284,19 @@ export default function About() {
               <div className="mb-8 text-[#94a3b8]">
                 {/* TODO: Replace with real qualifications */}
                 <ul className="list-disc list-inside space-y-2">
-                  <li>Certified AWS Solutions Architect</li>
-                  <li>Cisco Certified Network Associate (CCNA)</li>
+                  <li>20+ years of IT experience</li>
+                  <li>20+ years of Network Engineering experience</li>
+                  <li>10+ years of System Administration experience</li>
+                  <li>10+ years of IT Security experience</li>
+                  <li>10+ years of IT Automation experience</li>
+                  <li>15+ years of IT Leadership experience</li>
+                  <li>10+ years of Scripting & Coding experience</li>
+                  <li>10+ years of IT UI/UX Design experience</li>
+                  <li>10+ years of IT Project Management experience</li>
+                  <li>10 years of Military Service (US Army)</li>
+                  <li>Cisco Certified Network Associate (CCNA)</li> 
                   <li>CompTIA Security+</li>
-                  <li>Scrum Master Certified</li>
+                  <li>SANS GSLC & GISP</li>
                 </ul>
               </div>
               <motion.button
