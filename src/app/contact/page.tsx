@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ContactForm from "@/components/ContactForm";
+import ContactInfo from "@/components/ContactInfo";
 
 export default function Contact() {
   return (
     <>
       <AnimatedBackground />
-      <section className="fixed inset-0 flex items-center justify-center p-4">
-        <div className="max-w-2xl w-full mx-auto">
+      <section className="fixed inset-0 flex items-center justify-center p-4 overflow-y-auto">
+        <div className="max-w-6xl w-full mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -23,14 +24,23 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="card-3d p-6 sm:p-8"
-          >
-            <ContactForm />
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="card-3d p-6 sm:p-8"
+            >
+              <h3 className="text-2xl font-bold mb-6 text-gradient text-center">
+                Send a Message
+              </h3>
+              <ContactForm />
+            </motion.div>
+
+            {/* Contact Information */}
+            <ContactInfo />
+          </div>
         </div>
       </section>
     </>

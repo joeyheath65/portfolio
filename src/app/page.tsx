@@ -48,7 +48,7 @@ export default function Home() {
               className="mb-6 sm:mb-8"
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl text-blue-100/80">
-                I&apos;m Joe Heath, a full stack developer and AI enthusiast.
+                I&apos;m Joe Heath, network engineering leader, full stack developer and AI enthusiast.
               </h2>
             </motion.div>
             
@@ -57,16 +57,16 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 className="card-3d p-4 sm:p-6 rounded-xl"
               >
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gradient">Frontend Magic</h3>
-                <p className="text-sm sm:text-base text-[#94a3b8]">React, Next.js, TypeScript, and modern UI/UX design</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gradient">Networking</h3>
+                <p className="text-sm sm:text-base text-[#94a3b8]">Juniper Mist, Aruba Central, Python, AWS, Docker, TypeScript</p>
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="card-3d p-4 sm:p-6 rounded-xl"
               >
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gradient">Backend Expertise</h3>
-                <p className="text-sm sm:text-base text-[#94a3b8]">Node.js, Python, APIs, and database architecture</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gradient">Full Stack Development</h3>
+                <p className="text-sm sm:text-base text-[#94a3b8]">React, Next.js, TypeScript, and modern UI/UX design</p>
               </motion.div>
               
               <motion.div

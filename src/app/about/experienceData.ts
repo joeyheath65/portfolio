@@ -16,22 +16,17 @@ export const experienceData: ExperienceData[] = [
     company: "H-E-B",
     dates: "Aug 2023 - Present",
     duties: [
-      "Managed a team of 10+ network engineers.",
-      "Led the design and implementation of new wireless network infrastructure.",
-      "Managed the deployment of new wireless network equipment.",
-      "Managed the maintenance of existing wireless network equipment.",
-      "Managed the troubleshooting of wireless network issues.",
-      "Managed the training of new wireless network engineers.",
-      "Managed the documentation of wireless network procedures.",
-      "Managed the compliance of wireless network policies.",
-      "Managed the security of wireless network equipment."
+      "Lead team of 6 network engineers in implementing network automation solutions using Python scripting, Juniper Mist and Aruba Central cloud management, reducing manual configuration tasks by 30% and ensuring consistent deployment standards.",
+      "Architect and deploy enterprise wireless infrastructure across 500+ retail, warehouse, and corporate facilities using Juniper Mist AI-driven platform and Aruba wireless controllers, supporting mission-critical retail operations including POS, inventory management, and customer applications.",
+      "Collaborate with Enterprise Architecture teams to develop long-term wireless strategy, including WiFi 6E roadmap, IoT device integration, and edge computing infrastructure to support emerging retail technologies.",
+      "Manage vendor relationships with Juniper, Aruba, and system integrators while overseeing $5M annual wireless infrastructure budget and ensuring 99.9% network uptime across all locations."
     ],
     accomplishments: [
-      { text: "Reduced deployment times by 40% through CI/CD automation." },
-      { text: "Launched 3 major client projects on time and under budget." }
+      { text: "Developed Python automation framework for Juniper Mist, improving troubleshooting and visibility capabilities." },
+      { text: "Led wireless modernization across 350+ retail locations with Juniper Mist AI, reducing wireless network incidents by 60%." }
     ],
-    technology: ["React", "Next.js", "AWS", "Docker", "TypeScript"],
-    reflection: "This role challenged me to grow as a leader and architect, balancing technical depth with team mentorship."
+    technology: ["Juniper Mist", "Aruba Central", "Python", "AWS", "Docker", "TypeScript"],
+    reflection: "This role challenged me to grow as a leader and technologist, balancing technical depth with team mentorship."
   },
   {
     logo: "/images/profile/amazon.png",
@@ -39,13 +34,13 @@ export const experienceData: ExperienceData[] = [
     company: "Amazon",
     dates: "Feb 2021 - Aug 2023",
     duties: [
-      "Developed automation scripts for network device management.",
-      "Integrated monitoring tools with custom dashboards.",
-      "Collaborated with cross-functional teams to improve uptime."
+      "Lead a team of 10 direct reporting IT Managers and 150 indirect reporting Engineers and Technicians, overseeing critical IT infrastructure support and maintenance for more than 20 Amazon Fulfillment Centers across the region.",
+      "Initiate projects leveraging image recognition and automation to identify and respond to anomalies using existing security camera infrastructure within Amazon facilities.",
+      "Achieve 98% SLA attainment through data analysis, trend identification, and the delivery of high-quality enterprise infrastructure."
     ],
     accomplishments: [
-      { text: "Automated 80% of manual network tasks." },
-      { text: "Improved network reliability by 25%." }
+      { text: "Pioneered computer vision projects using existing camera infrastructure for operational anomaly detection, reducing manual monitoring overhead by 40%." },
+      { text: "Maintained 98% SLA across 100,000+ users through predictive analytics and proactive infrastructure scaling." }
     ],
     technology: ["Python", "Ansible", "Cisco", "Grafana"],
     reflection: "I learned the value of automation in reducing errors and freeing up time for innovation."
@@ -56,12 +51,12 @@ export const experienceData: ExperienceData[] = [
     company: "Amazon",
     dates: "Jan 2018 - Feb 2021",
     duties: [
-      "Developed automation scripts for network device management.",
+      "IT Manager supporting operations in 9 Fulfilment Centers spanning from San Antonio through Austin; Promoted to Regional IT Manager in February 2021.",
       "Integrated monitoring tools with custom dashboards.",
       "Collaborated with cross-functional teams to improve uptime."
     ],
     accomplishments: [
-      { text: "Automated 80% of manual network tasks." },
+      { text: "Contribute to Amazon's military hiring partnerships, supporting military veterans through training, networking, and a smooth transition into Amazon's workforce." },
       { text: "Improved network reliability by 25%." }
     ],
     technology: ["Python", "Ansible", "Cisco", "Grafana"],
@@ -73,15 +68,15 @@ export const experienceData: ExperienceData[] = [
     company: "Harland Clarke",
     dates: "Jan 2015 - Jan 2018",
     duties: [
-      "Developed automation scripts for network device management.",
-      "Integrated monitoring tools with custom dashboards.",
+      "Led a team of nine network engineers.",
+      "Headed security operations and administration of the enterprise LAN/WAN/WLAN network for a global financial services provider with more than 12,000 clients and managed a team of nine network engineers providing 24/7 Tier 2 and 3 support. ",
       "Collaborated with cross-functional teams to improve uptime."
     ],
     accomplishments: [
-      { text: "Automated 80% of manual network tasks." },
-      { text: "Improved network reliability by 25%." }
+      { text: "Implemented Cisco Application Centric Infrastructure (ACI) and Identity Services (ISE) to modernize data center operations and enhance network access controls." },
+      { text: "Revamped the network architecture for a facility with a 20G LAN backbone, redundant WAN, and shared infrastructure with custom security requirements." }
     ],
-    technology: ["Python", "Ansible", "Cisco", "Grafana"],
+    technology: ["Python", "Ansible", "Cisco", "Cisco ISE","ACI"],
     reflection: "I learned the value of automation in reducing errors and freeing up time for innovation."
   },
   {

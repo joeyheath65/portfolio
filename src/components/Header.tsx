@@ -9,7 +9,7 @@ export default function Header() {
 
   const menuItems = [
     { href: "/about", label: "About" },
-    { href: "/portfolio", label: "Portfolio" },
+    { href: "/portfolio", label: "My Work" },
     { href: "/contact", label: "Contact" },
     { href: "/blog", label: "Blog" },
   ];
