@@ -132,19 +132,21 @@ export const experienceData: ExperienceData[] = [
   },
   {
     logo: "/images/profile/lawndart.webp",
-    jobTitle: "Owner and Principal Engineer",
-    company: "Lawn Dart Development",
+    jobTitle: "Founder & Principal Engineer",
+    company: "Lawn Dart Systems, LLC",
     dates: "Jun 2024 - Present",
     duties: [
-      "Anything and everything! Currently a one man shop.",
-      "Developing full stack and AI/ML applications.",
-      "Helping clients realize their vision through technology."
+      "Founded and run a 100% veteran-owned software company in Floresville, TX, operating across two divisions: a services arm (web development, AI workflows, consulting) and a products arm.",
+      "Designed and built Slot'd, the flagship booking + CRM SaaS — full stack, from Firebase backend and Stripe Connect payments to the React web apps and Flutter companion.",
+      "Deliver practical AI strategy, development, and automation for small businesses — no upsells, just the work that saves clients time.",
+      "Own every layer end to end: architecture, build, deployment, payments, compliance, and client relationships."
     ],
     accomplishments: [
-      { text: "Biggest accomplishment is the fact I took the first step!" },
-      { text: "Check out https://lawndart.dev for more information.", link: "https://lawndart.dev" }
+      { text: "Shipped Slot'd to live beta — service pros sell their time as shareable, claimable Slots.", link: "https://slotd.app" },
+      { text: "Building Haven, a privacy-first health app, toward an App Store and Google Play launch in July 2026." },
+      { text: "Established the company as a registered Texas LLC with a full brand and product roadmap.", link: "https://lawndart.dev" }
     ],
-    technology: ["React", "Next.js", "Google Cloud", "Docker", "TypeScript"],
-    reflection: "Lawn Dart Development is my current side venture. I'm a one man shop that builds web applications for small businesses and non-profits."
+    technology: ["Next.js", "React", "TypeScript", "Firebase", "Stripe", "Flutter", "OpenAI"],
+    reflection: "Lawn Dart! Systems is where the network engineer, the developer, and the builder all come together — my own company, shipping real products to real users."
   }
 ]; 

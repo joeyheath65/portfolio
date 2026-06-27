@@ -2,41 +2,42 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { FaLinkedin, FaEnvelope, FaBriefcase, FaPhone } from "react-icons/fa";
 
 interface ContactItem {
   type: "email" | "phone" | "linkedin";
   label: string;
   value: string;
-  icon: string;
+  Icon: typeof FaEnvelope;
   url?: string;
 }
 
 const contactItems: ContactItem[] = [
   {
     type: "linkedin",
-    label: "LinkedIn Profile",
-    value: "linkedin.com/in/josephheath", // Replace with your actual LinkedIn URL
-    icon: "💼",
-    url: "https://linkedin.com/in/josephheath" // Replace with your actual LinkedIn URL
+    label: "LinkedIn",
+    value: "linkedin.com/in/josephheath",
+    Icon: FaLinkedin,
+    url: "https://linkedin.com/in/josephheath",
   },
   {
     type: "email",
-    label: "Personal Email",
-    value: "joseph.r.heath@gmail.com", // Replace with your actual email
-    icon: "📧"
+    label: "Work email",
+    value: "joe@lawndart.dev",
+    Icon: FaBriefcase,
   },
   {
-    type: "email", 
-    label: "Professional Email",
-    value: "joe@lawndart.dev", // Replace with your actual work email
-    icon: "💼"
+    type: "email",
+    label: "Personal email",
+    value: "joseph.r.heath@gmail.com",
+    Icon: FaEnvelope,
   },
   {
     type: "phone",
     label: "Phone",
-    value: "+1 (210) 464-6499", // Replace with your actual phone
-    icon: "📱"
-  }
+    value: "+1 (210) 464-6499",
+    Icon: FaPhone,
+  },
 ];
 
 export default function ContactInfo() {
@@ -62,78 +63,42 @@ export default function ContactInfo() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
       className="card-3d p-6 sm:p-8"
     >
-      <h3 className="text-2xl font-bold mb-6 text-gradient text-center">
-        Contact Information
-      </h3>
-      
-      <div className="space-y-4">
-        {contactItems.map((item, index) => (
-          <motion.div
+      <h2 className="mb-6 font-mono text-xs uppercase tracking-wider text-signal">
+        Direct lines
+      </h2>
+
+      <div className="space-y-3">
+        {contactItems.map((item) => (
+          <button
             key={item.label}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-            className="group"
+            onClick={() => handleItemClick(item)}
+            className="group flex w-full items-center justify-between rounded border border-[var(--line)] bg-[#0a1120] p-4 text-left transition-colors hover:border-signal/40"
           >
-            <button
-              onClick={() => handleItemClick(item)}
-              className={`w-full p-4 rounded-lg border transition-all duration-200 group ${
-                item.type === "linkedin" 
-                  ? "border-blue-500/30 bg-blue-900/20 hover:bg-blue-900/30 hover:border-blue-400/50" 
-                  : "border-amber-900/20 bg-slate-800/30 hover:bg-slate-800/50 hover:border-amber-500/30"
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <span className="text-2xl">{item.icon}</span>
-                  <div className="text-left">
-                    <p className={`text-sm font-medium ${
-                      item.type === "linkedin" ? "text-blue-200/90" : "text-amber-200/90"
-                    }`}>
-                      {item.label}
-                    </p>
-                    <p className={`font-mono text-sm ${
-                      item.type === "linkedin" ? "text-blue-100" : "text-amber-100"
-                    }`}>
-                      {item.value}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-2">
-                  {copiedItem === item.label && (
-                    <motion.span
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="text-green-400 text-sm font-medium"
-                    >
-                      Copied!
-                    </motion.span>
-                  )}
-                  <span className={`transition-colors ${
-                    item.type === "linkedin" 
-                      ? "text-blue-500/60 group-hover:text-blue-400" 
-                      : "text-amber-500/60 group-hover:text-amber-500"
-                  }`}>
-                    {item.type === "linkedin" ? "🔗" : "📋"}
-                  </span>
-                </div>
+            <div className="flex items-center gap-3">
+              <item.Icon className="h-4 w-4 text-signal" />
+              <div>
+                <p className="font-mono text-[0.7rem] uppercase tracking-wider text-muted">
+                  {item.label}
+                </p>
+                <p className="font-mono text-sm text-paper">{item.value}</p>
               </div>
-            </button>
-          </motion.div>
+            </div>
+
+            <span className="font-mono text-[0.7rem] uppercase tracking-wider text-muted transition-colors group-hover:text-signal">
+              {copiedItem === item.label ? "Copied" : item.type === "linkedin" ? "Open" : "Copy"}
+            </span>
+          </button>
         ))}
       </div>
-      
-      <div className="mt-6 text-center">
-        <p className="text-amber-100/60 text-sm">
-          Click LinkedIn to visit profile • Click other items to copy to clipboard
-        </p>
-      </div>
+
+      <p className="mt-6 font-mono text-[0.7rem] tracking-wide text-muted/70">
+        Click LinkedIn to open · click any other to copy
+      </p>
     </motion.div>
   );
-} 
+}

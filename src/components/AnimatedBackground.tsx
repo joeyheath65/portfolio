@@ -1,117 +1,138 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
-interface Star {
-  id: number;
-  delay: number;
-  top: number;
-  left: number;
-}
-
+/**
+ * AnimatedBackground — ambient network field used behind interior pages.
+ * A loose node/link topology with packets drifting along the links in
+ * signal-green. Calmer than the homepage hero (no "lawn dart" flight).
+ * Fixed, non-interactive, and behind page content.
+ */
 export default function AnimatedBackground() {
-    const [staticStars, setStaticStars] = useState<Star[]>([]);
-    const [shootingStars, setShootingStars] = useState<Star[]>([]);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    useEffect(() => {
-    // Create static stars
-        const newStaticStars = Array.from({ length: 50 }, (_, i) => ({
-            id: i,
-            delay: Math.random() * 5,
-            top: Math.random() * 100,
-            left: Math.random() * 100,
-        }));
-        setStaticStars(newStaticStars);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-    // Create shooting stars
-        const newShootingStars = Array.from({ length: 3 }, (_, i) => ({
-            id: i,
-            delay: Math.random() * 5,
-            top: Math.random() * 80,
-            left: -20,                // -20 creates the star off screen - dont reduce this because its ugly
-        }));
-        setShootingStars(newShootingStars);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const SIGNAL = "#4cd964";
 
-    // Refresh shooting stars periodically
-        const interval = setInterval(() => {
-            setShootingStars(prev => prev.map(star => ({
-            ...star,
-            delay: Math.random() * 5,
-            top: Math.random() * 90,
-            left: -20,                  // -20 creates the star off screen - dont reduce this because its ugly
-            })));
-        }, 5000);
+    let W = 0;
+    let H = 0;
+    let raf = 0;
 
-    return () => clearInterval(interval);
-        }, []);
+    type Node = { x: number; y: number; r: number; tw: number; phase: number };
+    type Link = { a: number; b: number };
+    type Packet = { link: number; t: number; speed: number };
 
-    return (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute inset-0 space-bg">
-            {/* Corona effect */}
-            <div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96"
-                style={{
-                background: "radial-gradient(circle at center, #0a0f1f 0%, #0d1b3a 40%, #00000000 80%)",
-                filter: "blur(40px)",
-                }}
-            />
+    let nodes: Node[] = [];
+    let links: Link[] = [];
+    let packets: Packet[] = [];
 
-            {/* Grid pattern overlay */}
-            <div className="absolute inset-0 opacity-[0.06]" 
-                style={{ 
-                backgroundImage: "radial-gradient(circle at 1px 1px, #5624fb 1px, #0000 0)",
-                backgroundSize: "60px 60px"
-                }} 
-            />
-        
-            {/* Static stars */}
-            {staticStars.map((star, i) => (
-                <motion.div
-                  key={star.id}
-                  className="absolute w-1 h-1"
-                  style={{
-                    top: `${star.top}%`,
-                    left: `${star.left}%`,
-                    background: i % 5 === 0
-                      ? "#5624fb80" // blue accent (50% opacity)
-                      : "#60a5faCC" // blue accent (80% opacity)
-                  }}
-                  animate={{
-                    opacity: [0.3, 1, 0.3],
-                    scale: [0.7, 1, 0.7],
-                  }}
-                  transition={{
-                    duration: 3,
-                    delay: star.delay,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-            ))}
-        
-            {/* Shooting stars */}
-            {shootingStars.map((star, i) => (
-                <div
-                  key={`shooting-${star.id}`}
-                  className="absolute h-px w-[120px]"
-                  style={{
-                    left: `${star.left}%`,
-                    top: `${star.top}%`,
-                    transform: "rotate(0deg)",
-                    transformOrigin: "left center",
-                    animation: `shooting-star 3s linear ${star.delay}s infinite`,
-                  }}
-                >
-                  <div className={
-                    i % 2 === 0
-                      ? "h-px w-full bg-gradient-to-r from-[#0000] via-[#83bafc] to-[#0000] opacity-90"
-                      : "h-px w-full bg-gradient-to-r from-[#0000] via-[#5624fb] to-[#0000] opacity-80"
-                  } />
-                </div>
-            ))}
-        </div>
+    function build() {
+      const rect = canvas!.getBoundingClientRect();
+      W = rect.width;
+      H = rect.height;
+      canvas!.width = Math.floor(W * dpr);
+      canvas!.height = Math.floor(H * dpr);
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const cols = Math.max(5, Math.round(W / 160));
+      const rows = Math.max(4, Math.round(H / 160));
+      nodes = [];
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          if (Math.random() < 0.32) continue;
+          nodes.push({
+            x: ((i + 0.5) / cols) * W + (Math.random() - 0.5) * 80,
+            y: ((j + 0.5) / rows) * H + (Math.random() - 0.5) * 80,
+            r: Math.random() * 1.3 + 0.9,
+            tw: Math.random() * 2 + 1.2,
+            phase: Math.random() * Math.PI * 2,
+          });
+        }
+      }
+
+      links = [];
+      for (let a = 0; a < nodes.length; a++) {
+        for (let b = a + 1; b < nodes.length; b++) {
+          const d = Math.hypot(nodes[a].x - nodes[b].x, nodes[a].y - nodes[b].y);
+          if (d < 190 && Math.random() < 0.38) links.push({ a, b });
+        }
+      }
+
+      packets = links
+        .slice(0, Math.min(links.length, 12))
+        .map((_, link) => ({ link, t: Math.random(), speed: 0.0012 + Math.random() * 0.002 }));
+    }
+
+    function draw(now: number) {
+      ctx!.clearRect(0, 0, W, H);
+
+      ctx!.lineWidth = 1;
+      ctx!.strokeStyle = "rgba(76, 217, 100, 0.08)";
+      for (const l of links) {
+        const a = nodes[l.a];
+        const b = nodes[l.b];
+        ctx!.beginPath();
+        ctx!.moveTo(a.x, a.y);
+        ctx!.lineTo(b.x, b.y);
+        ctx!.stroke();
+      }
+
+      for (const n of nodes) {
+        const tw = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin((now / 1000) * n.tw + n.phase));
+        ctx!.beginPath();
+        ctx!.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx!.fillStyle = `rgba(150, 172, 198, ${0.32 * tw})`;
+        ctx!.fill();
+      }
+
+      if (!reduce) {
+        for (const p of packets) {
+          p.t += p.speed;
+          if (p.t > 1) p.t -= 1;
+          const l = links[p.link];
+          if (!l) continue;
+          const a = nodes[l.a];
+          const b = nodes[l.b];
+          ctx!.beginPath();
+          ctx!.arc(a.x + (b.x - a.x) * p.t, a.y + (b.y - a.y) * p.t, 1.5, 0, Math.PI * 2);
+          ctx!.fillStyle = SIGNAL;
+          ctx!.globalAlpha = 0.7;
+          ctx!.fill();
+          ctx!.globalAlpha = 1;
+        }
+      }
+
+      raf = requestAnimationFrame(draw);
+    }
+
+    build();
+    raf = requestAnimationFrame(draw);
+
+    const onResize = () => build();
+    window.addEventListener("resize", onResize);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  return (
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden="true" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 40%, transparent 40%, rgba(4,7,13,0.55) 100%)",
+        }}
+      />
     </div>
-    );
-    } 
+  );
+}

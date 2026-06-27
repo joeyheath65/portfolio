@@ -1,22 +1,30 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Orbitron } from "next/font/google";
+import { Bricolage_Grotesque, JetBrains_Mono, Inter } from "next/font/google";
 
 import RootLayoutClient from "@/components/RootLayoutClient";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const display = Bricolage_Grotesque({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+
+const body = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Joe Heath - Full Stack Web Developer and AI Enthusiast",
-  description: "Portfolio and blog of Joe Heath, a full stack web developer specializing in innovative web applications and AI solutions.",
+  title: "Joe Heath — Network Engineer & Full-Stack Developer",
+  description:
+    "Joe Heath — network engineering leader, full-stack developer, and founder of Lawn Dart! Systems. I design the network, then build what runs on it.",
 };
 
 export default function RootLayout({
@@ -25,8 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full bg-[#030305] text-[#cbd5e1]">
-      <body className={`${spaceGrotesk.variable} ${orbitron.variable} font-space antialiased bg-[#030305] text-[#cbd5e1]`}>
+    <html lang="en" className="h-full">
+      <body
+        className={`${display.variable} ${mono.variable} ${body.variable} font-sans antialiased`}
+      >
         <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>

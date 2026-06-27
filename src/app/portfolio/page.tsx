@@ -7,86 +7,37 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectModal from "@/components/ProjectModal";
 
-const projects = [
-  {
-    title: "Web Application for Little League",
-    description: "A modern web application built with React and JavaScript with an OpenAI powered chatbot.",
-    tech: ["JavaScript", "React", "TypeScript", "AI", "OpenAI", "Firebase"],
-    image: "/images/projects/fll-home.jpg",
-    link: "#",
-    longDescription: "This project showcases the integration of modern AI capabilities with practical home town applications. It features multiple web integrations, dynamic and modular design, an authentication gateway for secure management of the page content, and live game score updates.",
-    features: [
-      "Real-time AI chatbot with over 1000 pages of content",
-      "In page calculators",
-      "Responsive and modular design",
-      "Multiple 3rd party integrations (Facebook, Google Calendar, etc.)"
-    ],
-    githubLink: "https://github.com/joeyheath65/project1",
-    liveDemo: "https://floresvillelittleleague.com"
-  },
-  {
-    title: "Lawn Dart Development",
-    description: "My side venture, building web applications for small businesses and non-profits.",
-    tech: ["Python", "Node.js", "Next.js", "React", "Typescript", "AI","Firebase"],
-    image: "/images/projects/ld-dev.webp",
-    link: "#",
-    longDescription: "A convenient modal that allows users to ask questions about the league and get answers in seconds. Also can explain rules and regulations of the game, interpret complex game situations and offer a ruling as an umpire would.",
-    features: [
-      "AI chatbot that will help you think through your next project",
-      "Modular and scalable design",
-      "OpenAI integration",
-      "Function calling abilities",
-      "Easy to use and deploy! Self packaged for seamless integration into any website"
-    ],
-    githubLink: "https://github.com/joeyheath65/project2",
-    liveDemo: "https://lawndart.dev"
-  },
-  {
-    title: "Focus AI",
-    description: "Consolidated management dashboard for client management and note taking.",
-    tech: ["React", "OpenAI", "Typescript", "Firestore", "Tailwind", "Vite"],
-    image: "/images/projects/focus.jpg",
-    link: "#",
-    longDescription: "An 'all in one' dashboard for managing clients, AI platforms, client website performance, and note taking. Also has an AI assistant to help with keeping the notes clean and readable, giving client updates, and more.",
-    features: [
-      "Dashboard for managing clients, AI platforms, client website performance, and note taking",
-      "Multiple 3rd party integrations and function calling",
-      "Advanced website analytics",
-      "User collaboration tools",
-      "Network and system administration tools"
-    ],
-    githubLink: "https://github.com/joeyheath65/project3",
-    liveDemo: "https://project3-demo.com"
-  }
-];
+import { projects, type Project } from "./projects";
 
 export default function Portfolio() {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <>
       <AnimatedBackground />
-      <section className="fixed inset-0 flex items-center justify-center p-4 overflow-y-auto">
-        <div className="max-w-6xl w-full mx-auto">
+      <section className="relative z-10 min-h-screen px-4 pt-28 pb-20">
+        <div className="mx-auto max-w-6xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.6 }}
+            className="mb-12 max-w-2xl"
           >
-            <h1 className="text-4xl font-bold mb-4 text-gradient">Portfolio</h1>
-            <p className="text-amber-100/70 text-lg max-w-2xl mx-auto">
-              Or should we say, &apos;Joe-folio&apos;? No ?
-              Explore a selection of my recent projects, showcasing expertise in 
-              React, Next.js, creative innovation, and custom use AI integrations.
+            <p className="eyebrow mb-3">
+              <span className="text-signal">◢</span> SELECTED WORK
+            </p>
+            <h1 className="text-4xl font-extrabold sm:text-5xl">Things I&apos;ve built.</h1>
+            <p className="mt-4 text-paper/65">
+              A selection of recent projects across web, AI, and the Lawn Dart! venture —
+              React, Next.js, and custom AI integrations.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
-              <ProjectCard 
-                key={project.title} 
-                {...project} 
+              <ProjectCard
+                key={project.title}
+                {...project}
                 index={index}
                 onClick={() => setSelectedProject(project)}
               />
@@ -98,7 +49,7 @@ export default function Portfolio() {
       <ProjectModal
         isOpen={selectedProject !== null}
         onClose={() => setSelectedProject(null)}
-        project={selectedProject || projects[0]} // Fallback to prevent null
+        project={selectedProject || projects[0]}
       />
     </>
   );

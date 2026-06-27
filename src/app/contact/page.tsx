@@ -10,39 +10,40 @@ export default function Contact() {
   return (
     <>
       <AnimatedBackground />
-      <section className="fixed inset-0 flex items-center justify-center p-4 overflow-y-auto">
-        <div className="max-w-6xl w-full mx-auto">
+      <section className="relative z-10 min-h-screen px-4 pt-28 pb-20">
+        <div className="mx-auto max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-8"
+            transition={{ duration: 0.6 }}
+            className="mb-10 max-w-2xl"
           >
-            <h1 className="text-4xl font-bold mb-4 text-gradient">Get in Touch</h1>
-            <p className="text-amber-100/70 text-lg">
-              Interested in working together? I&apos;d love to hear from you.
+            <p className="eyebrow mb-3">
+              <span className="text-signal">●</span> GET IN TOUCH
+            </p>
+            <h1 className="text-4xl font-extrabold sm:text-5xl">Let&apos;s talk.</h1>
+            <p className="mt-4 text-paper/65">
+              A network to design, an app to ship, or just a question — drop me a line.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Contact Form */}
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="card-3d p-6 sm:p-8"
             >
-              <h3 className="text-2xl font-bold mb-6 text-gradient text-center">
-                Send a Message
-              </h3>
+              <h2 className="mb-6 font-mono text-xs uppercase tracking-wider text-signal">
+                Send a message
+              </h2>
               <ContactForm />
             </motion.div>
 
-            {/* Contact Information */}
             <ContactInfo />
           </div>
         </div>
       </section>
     </>
   );
-} 
+}

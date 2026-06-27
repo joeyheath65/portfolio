@@ -3,45 +3,109 @@
 @tailwind utilities;
 
 :root {
-  --color-space: #030305;
-  --color-space-light: #0a0f1f;
-  --color-corona-bright: #cbd5e1;
-  --color-corona-mid: #94a3b8;
-  --color-corona-dark: #334155;
-  --color-accent-blue: #64748b;
-  --color-accent-blue-dark: #1e293b;
-  --color-star: #f8fafc;
-  --color-space-dust: #1e293b;
+  --ink: #060a12;
+  --panel: #0d1424;
+  --panel-2: #111c31;
+  --line: #1a2740;
+  --signal: #4cd964;
+  --signal-dim: #2e8b4f;
+  --olive: #5c7b48;
+  --paper: #f2f2f2;
+  --text: #c7d2e0;
+  --muted: #8593a6;
 }
 
 @layer base {
   body {
-    @apply bg-[#030305] text-[#cbd5e1] min-h-screen relative overflow-x-hidden font-space;
-    background-image: 
-      /* Dim vignette corners */
-      radial-gradient(ellipse at 50% 120%, #030305 60%, #1e293b00 100%),
-      /* Subtle blue steel nebula */
-      radial-gradient(circle at 70% 20%, #33415533 0%, #0000 60%),
-      radial-gradient(circle at 30% 80%, #64748b22 0%, #0000 60%),
-      /* Faint star field */
-      repeating-radial-gradient(circle at 60% 40%, #cbd5e10a 0.5px, #0000 2px, #0000 20px),
-      /* Existing gradients for depth */
-      radial-gradient(circle at center, #33415533 0%, #0000 35%),
-      radial-gradient(circle at 25% 25%, #1e293b22 0%, #0000 25%),
-      radial-gradient(circle at 75% 75%, #64748b22 0%, #0000 25%);
+    @apply min-h-screen relative overflow-x-hidden antialiased;
+    color: var(--text);
+    font-family: var(--font-body), system-ui, sans-serif;
+    background:
+      radial-gradient(ellipse at 80% -10%, rgba(76, 217, 100, 0.07), transparent 45%),
+      radial-gradient(ellipse at 0% 100%, rgba(92, 123, 72, 0.08), transparent 50%),
+      linear-gradient(180deg, #070c16 0%, var(--ink) 55%, #04070d 100%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-orbitron;
+    font-family: var(--font-display), system-ui, sans-serif;
+    color: var(--paper);
+    letter-spacing: -0.01em;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
   }
 }
 
 @layer components {
+  /* Kept for back-compat with existing markup; now a clean near-white. */
   .text-gradient {
-    @apply bg-gradient-to-r from-[#cbd5e1] via-[#64748b] to-[#94a3b8] bg-clip-text text-transparent;
+    color: var(--paper);
+  }
+  .text-signal {
+    color: var(--signal);
   }
 
-  /* Ensure motion elements maintain visibility */
+  .eyebrow {
+    font-family: var(--font-mono), monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* Monospace data/tech tag */
+  .chip {
+    display: inline-block;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    padding: 0.28rem 0.6rem;
+    border-radius: 2px;
+    background: rgba(76, 217, 100, 0.07);
+    color: #a7e8b5;
+    border: 1px solid rgba(76, 217, 100, 0.18);
+  }
+
+  /* Panel/card — class name preserved so existing usages restyle automatically. */
+  .card-3d {
+    @apply relative rounded-xl transition-all duration-300;
+    background: linear-gradient(180deg, rgba(17, 28, 49, 0.7), rgba(13, 20, 36, 0.7));
+    border: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+  }
+  .card-3d:hover {
+    border-color: rgba(76, 217, 100, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px -20px rgba(76, 217, 100, 0.35);
+  }
+
+  .btn-signal {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200;
+    background: var(--signal);
+    color: #04140a;
+    box-shadow: 0 0 0 1px rgba(76, 217, 100, 0.4), 0 12px 30px -14px rgba(76, 217, 100, 0.6);
+  }
+  .btn-signal:hover {
+    background: #5fe676;
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded transition-all duration-200;
+    color: var(--paper);
+    border: 1px solid var(--line);
+    background: rgba(13, 20, 36, 0.5);
+  }
+  .btn-ghost:hover {
+    border-color: var(--signal-dim);
+    transform: translateY(-2px);
+  }
+
+  /* Keep motion elements above the background canvas */
   .motion-content {
     @apply relative z-10;
     will-change: transform, opacity;
@@ -50,91 +114,23 @@
 }
 
 @layer utilities {
-  .font-space {
-    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  .font-display {
+    font-family: var(--font-display), system-ui, sans-serif;
   }
-
-  .font-orbitron {
-    font-family: var(--font-orbitron), system-ui, sans-serif;
+  .font-mono {
+    font-family: var(--font-mono), monospace;
   }
-}
-
-@keyframes shooting-star {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(2000%, 0) rotate(0deg);
-    opacity: 0;
+  .font-sans {
+    font-family: var(--font-body), system-ui, sans-serif;
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes corona-pulse {
-  0%, 100% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-@keyframes star-twinkle {
-  0%, 100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.card-3d {
-  @apply relative transition-transform duration-500 ease-out backdrop-blur-md shadow-2xl;
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
-  background: #1e293bcc;
-  border: 1px solid #33415544;
-  box-shadow: 0 8px 32px 0 #030305cc, 0 1.5px 8px 0 #64748b33;
-}
-
-.card-3d:hover {
-  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
-  background: #334155cc;
-  border-color: #64748b66;
-  box-shadow: 0 12px 48px 0 #030305ee, 0 2px 12px 0 #64748b44;
-}
-
-.singularity-glow {
-  @apply relative;
-}
-
-.singularity-glow::before {
-  content: "";
-  @apply absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#64748b] via-[#334155] to-[#cbd5e1] opacity-70 blur-sm;
-  animation: corona-pulse 4s ease-in-out infinite;
-}
-
-.space-bg {
-  background:
-    radial-gradient(ellipse at 50% 120%, #030305 60%, #1e293b00 100%),
-    radial-gradient(circle at 60% 30%, #33415544 0%, #0000 70%),
-    radial-gradient(circle at 20% 80%, #64748b33 0%, #0000 70%),
-    radial-gradient(circle at center, #1e293b 0%, #030305 100%);
 }
