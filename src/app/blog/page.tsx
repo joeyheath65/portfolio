@@ -22,12 +22,12 @@ const blogPosts = [
     slug: "practical-ai-smb",
   },
   {
-    title: "Building Haven: privacy-first by architecture",
-    excerpt: "How a health app can be incapable of leaking your data — no account, no outbound transmission, by design.",
+    title: "Automating a 500-site wireless network",
+    excerpt: "What it takes to run enterprise Wi-Fi with Python, Juniper Mist, and Aruba Central — and where automation actually pays off.",
     date: "Coming soon",
     readTime: "—",
-    tags: ["Privacy", "Product", "Lawn Dart!"],
-    slug: "building-haven",
+    tags: ["Networking", "Automation", "Python"],
+    slug: "automating-wireless-at-scale",
   },
 ];
 

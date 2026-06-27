@@ -143,7 +143,7 @@ export const experienceData: ExperienceData[] = [
     ],
     accomplishments: [
       { text: "Shipped Slot'd to live beta — service pros sell their time as shareable, claimable Slots.", link: "https://slotd.app" },
-      { text: "Building Haven, a privacy-first health app, toward an App Store and Google Play launch in July 2026." },
+      { text: "Deliver web, mobile, and network/workflow automation for small businesses across South & Central Texas." },
       { text: "Established the company as a registered Texas LLC with a full brand and product roadmap.", link: "https://lawndart.dev" }
     ],
     technology: ["Next.js", "React", "TypeScript", "Firebase", "Stripe", "Flutter", "OpenAI"],

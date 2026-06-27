@@ -54,13 +54,13 @@ export const projects: Project[] = [
     image: "/images/projects/lawndart.webp",
     link: "#",
     longDescription:
-      "Lawn Dart! Systems is my 100% veteran-owned shop in Floresville, TX. A services division (web development, AI workflows, consulting) paired with a products division — including Haven, a privacy-first health app launching on the App Store and Google Play in July 2026.",
+      "Lawn Dart! Systems is my 100% veteran-owned shop in Floresville, TX. A services division (web and mobile development, network automation, AI workflows, consulting) paired with a products division — led by Slot'd, the flagship booking + CRM SaaS for service pros.",
     features: [
       "Practical AI strategy and automation for SMBs — no upsells",
-      "Modular and scalable web builds",
+      "Web and mobile builds — Next.js, React, Flutter",
+      "Network and workflow automation in Python",
       "OpenAI integration with function calling",
-      "Haven — privacy-first, no account, no outbound data",
-      "Self-packaged for seamless integration into any website",
+      "Google Cloud and Firebase backends",
     ],
     githubLink: "https://github.com/joeyheath65/project2",
     liveDemo: "https://lawndart.dev",

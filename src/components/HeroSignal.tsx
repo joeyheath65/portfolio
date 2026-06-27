@@ -1,19 +1,39 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 /**
- * HeroSignal — prototype hero for Joe Heath's portfolio.
+ * HeroSignal — home landing hero for Joe Heath's portfolio.
  * Blends the network-engineering (topology / signal) world with the
  * Lawn Dart! identity (military precision, the green "go" signal, the "!").
  *
- * The ambient canvas draws a loose node/link topology. On load a single
- * "lawn dart" packet launches from the lower-left, arcs across the field,
- * and lands on a target node — establishing a route that pulses signal-green.
+ * The ambient canvas draws a loose node/link topology that gently floats,
+ * and on load a single "lawn dart" packet arcs across the field and lands on
+ * a target — establishing a route that pulses signal-green. The headline's
+ * destination rotates through the things Joe builds.
  * Content reveal is driven by CSS (always shows, even if canvas/JS is absent).
  */
+const ROTATING = [
+  "the network.",
+  "the automation.",
+  "the web app.",
+  "the mobile app.",
+  "the cloud.",
+  "the dashboard.",
+];
+
 export default function HeroSignal() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => {
+      setPhraseIndex((i) => (i + 1) % ROTATING.length);
+    }, 2400);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,7 +52,12 @@ export default function HeroSignal() {
     let raf = 0;
     let start = performance.now();
 
-    type Node = { x: number; y: number; r: number; tw: number; phase: number };
+    type Node = {
+      x: number; y: number; // live position (base + float), updated each frame
+      bx: number; by: number; // base position
+      ax: number; ay: number; fx: number; fy: number; px: number; py: number; // float
+      r: number; tw: number; phase: number;
+    };
     type Link = { a: number; b: number };
     type Packet = { link: number; t: number; speed: number };
 
@@ -55,9 +80,16 @@ export default function HeroSignal() {
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           if (Math.random() < 0.28) continue; // sparse, organic gaps
+          const bx = ((i + 0.5) / cols) * W + (Math.random() - 0.5) * 70;
+          const by = ((j + 0.5) / rows) * H + (Math.random() - 0.5) * 70;
           nodes.push({
-            x: ((i + 0.5) / cols) * W + (Math.random() - 0.5) * 70,
-            y: ((j + 0.5) / rows) * H + (Math.random() - 0.5) * 70,
+            x: bx, y: by, bx, by,
+            ax: 6 + Math.random() * 12,
+            ay: 6 + Math.random() * 12,
+            fx: 0.0001 + Math.random() * 0.00024,
+            fy: 0.0001 + Math.random() * 0.00024,
+            px: Math.random() * Math.PI * 2,
+            py: Math.random() * Math.PI * 2,
             r: Math.random() * 1.4 + 1,
             tw: Math.random() * 2 + 1.2,
             phase: Math.random() * Math.PI * 2,
@@ -85,6 +117,17 @@ export default function HeroSignal() {
     function draw(now: number) {
       const t = now - start;
       ctx!.clearRect(0, 0, W, H);
+
+      // gentle floating drift — the constellation breathes (home hero only)
+      for (const n of nodes) {
+        if (reduce) {
+          n.x = n.bx;
+          n.y = n.by;
+          continue;
+        }
+        n.x = n.bx + Math.sin(now * n.fx + n.px) * n.ax;
+        n.y = n.by + Math.cos(now * n.fy + n.py) * n.ay;
+      }
 
       // links
       ctx!.lineWidth = 1;
@@ -209,16 +252,28 @@ export default function HeroSignal() {
         </p>
 
         <h1 className="hs-headline">
-          From the <span className="hs-em">wire</span> to the
+          From the <span className="hs-em">wire</span> to
           <br />
-          <span className="hs-em-2">web app</span>
-          <span className="hs-period">.</span>
+          <span className="hs-rotate">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={ROTATING[phraseIndex]}
+                className="hs-em-2"
+                initial={{ y: 16, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -16, opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
+              >
+                {ROTATING[phraseIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </span>
         </h1>
 
         <p className="hs-sub">
-          I&apos;m <strong>Joe Heath</strong> — network engineering leader, full-stack developer,
-          and founder of <span className="hs-brand">Lawn&nbsp;Dart!&nbsp;Systems</span>. I design the
-          network, then build what runs on it.
+          I&apos;m <strong>Joe Heath</strong> — network &amp; automation engineer, full-stack
+          developer, and founder of <span className="hs-brand">Lawn&nbsp;Dart!&nbsp;Systems</span>.
+          I automate the network, then build what runs on it — web, mobile, and the tools in between.
         </p>
 
         <div className="hs-cta-row">
@@ -226,22 +281,24 @@ export default function HeroSignal() {
             See the work <span aria-hidden="true">→</span>
           </a>
           <a
-            href="https://lawndart.dev"
+            href="https://slotd.app"
             target="_blank"
             rel="noreferrer"
             className="hs-cta hs-cta-ghost"
           >
-            Lawn Dart! Systems <span aria-hidden="true">↗</span>
+            Try Slot&apos;d <span aria-hidden="true">↗</span>
           </a>
         </div>
 
         <ul className="hs-strip" aria-label="Stack and current work">
-          <li>JUNIPER MIST</li>
-          <li>ARUBA CENTRAL</li>
+          <li>NETWORK AUTOMATION</li>
+          <li>PYTHON</li>
           <li>NEXT.JS</li>
+          <li>FLUTTER</li>
+          <li>GOOGLE CLOUD · FIREBASE</li>
           <li>OPENAI</li>
           <li className="hs-strip-live">
-            <span className="hs-dot" /> HAVEN ▸ APP STORE JUL 2026
+            <span className="hs-dot" /> SLOT&apos;D ▸ LIVE
           </li>
         </ul>
       </div>
@@ -314,8 +371,17 @@ export default function HeroSignal() {
           color: var(--signal);
           text-shadow: 0 0 38px rgba(76,217,100,0.35);
         }
-        .hs-period { color: var(--signal); }
+        .hs-rotate {
+          display: inline-block;
+          vertical-align: top;
+        }
+        .hs-rotate .hs-em-2 {
+          display: inline-block;
+          white-space: nowrap;
+          will-change: transform, opacity;
+        }
         .hs-headline > * { display: inline; }
+        .hs-headline > .hs-rotate { display: inline-block; }
         .hs-headline {
           opacity: 0;
           animation: hs-rise 0.9s cubic-bezier(0.2,0.7,0.2,1) forwards 0.25s;

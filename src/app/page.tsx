@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 const capabilities = [
   {
     no: "01",
-    title: "Network engineering",
-    body: "Enterprise wireless and automation at scale — Juniper Mist, Aruba Central, Python. 500+ sites, 99.9% uptime.",
+    title: "Network engineering & automation",
+    body: "Enterprise wireless and Python automation at scale — Juniper Mist, Aruba Central. 500+ sites, 99.9% uptime, manual config automated away.",
     tags: ["Juniper Mist", "Aruba Central", "Python", "Automation"],
   },
   {
     no: "02",
-    title: "Full-stack build",
-    body: "Production web apps end to end — React and Next.js front ends on TypeScript, Firebase, and cloud infra.",
-    tags: ["Next.js", "React", "TypeScript", "Firebase"],
+    title: "Full-stack development",
+    body: "Web and mobile, end to end — Next.js and React on the front, Flutter on phones, TypeScript with Firebase and Google Cloud underneath.",
+    tags: ["Next.js", "React", "Flutter", "TypeScript", "Firebase", "Google Cloud"],
   },
   {
     no: "03",
@@ -39,7 +39,7 @@ export default function Home() {
             <span className="text-signal">◢</span> WHAT I DO
           </p>
           <h2 className="mb-12 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">
-            One person across the whole stack — from the wire to the web app.
+            One person across the whole stack — from the wire to the web, mobile, and cloud.
           </h2>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -71,7 +71,8 @@ export default function Home() {
             Have something that needs building?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-paper/65">
-            Whether it&apos;s a network to design or an app to ship, I&apos;d like to hear about it.
+            Whether it&apos;s a network to automate, an app to ship, or a product like Slot&apos;d to
+            build on, I&apos;d like to hear about it.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 font-mono text-sm">
             <a href="/portfolio" className="btn-signal px-6 py-3">
