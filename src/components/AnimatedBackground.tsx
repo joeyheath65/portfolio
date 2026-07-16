@@ -109,17 +109,29 @@ export default function AnimatedBackground() {
         }
       }
 
-      raf = requestAnimationFrame(draw);
+      // Under reduced-motion, render a single static frame and stop — don't
+      // keep repainting at 60fps forever.
+      if (!reduce) raf = requestAnimationFrame(draw);
     }
 
     build();
     raf = requestAnimationFrame(draw);
 
     const onResize = () => build();
+    // Pause the loop while the tab is hidden; resume on return.
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+      } else if (!reduce) {
+        raf = requestAnimationFrame(draw);
+      }
+    };
     window.addEventListener("resize", onResize);
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 

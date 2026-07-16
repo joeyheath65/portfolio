@@ -2,6 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
+
+import { useModalA11y } from "./useModalA11y";
 
 interface ExperienceDetailsProps {
   isOpen: boolean;
@@ -17,6 +20,9 @@ interface ExperienceDetailsProps {
 }
 
 export default function ExperienceDetails({ isOpen, logo, jobTitle, company, dates, duties, accomplishments, technology, reflection, onClose }: ExperienceDetailsProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useModalA11y(isOpen, onClose, dialogRef);
+
   if (!isOpen) return null;
   return (
     <AnimatePresence>
@@ -30,12 +36,17 @@ export default function ExperienceDetails({ isOpen, logo, jobTitle, company, dat
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
         >
           <motion.div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="exp-modal-title"
+            tabIndex={-1}
             initial={{ scale: 0.96, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.96, opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-xl border border-[var(--line)] bg-[#0a1120] p-8"
+            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-xl border border-[var(--line)] bg-[#0a1120] p-8 focus:outline-none"
           >
             <button
               onClick={onClose}
@@ -50,7 +61,7 @@ export default function ExperienceDetails({ isOpen, logo, jobTitle, company, dat
             <div className="absolute right-16 top-4 h-12 w-12">
               <Image src={logo} alt={`${company} logo`} width={48} height={48} className="h-full w-full object-contain" />
             </div>
-            <h2 className="mb-1 text-2xl font-extrabold text-paper">{jobTitle}</h2>
+            <h2 id="exp-modal-title" className="mb-1 text-2xl font-extrabold text-paper">{jobTitle}</h2>
             <div className="text-lg text-paper/80">{company}</div>
             <div className="mb-5 font-mono text-xs tracking-wide text-muted">{dates}</div>
 

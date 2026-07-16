@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import HeroSignal from "@/components/HeroSignal";
 
@@ -75,12 +76,12 @@ export default function Home() {
             build on, I&apos;d like to hear about it.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 font-mono text-sm">
-            <a href="/portfolio" className="btn-signal px-6 py-3">
+            <Link href="/portfolio" className="btn-signal px-6 py-3">
               See the work <span aria-hidden="true">→</span>
-            </a>
-            <a href="/contact" className="btn-ghost px-6 py-3">
+            </Link>
+            <Link href="/contact" className="btn-ghost px-6 py-3">
               Get in touch <span aria-hidden="true">↗</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

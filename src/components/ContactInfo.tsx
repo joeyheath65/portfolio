@@ -96,7 +96,7 @@ export default function ContactInfo() {
         ))}
       </div>
 
-      <p className="mt-6 font-mono text-[0.7rem] tracking-wide text-muted/70">
+      <p className="mt-6 font-mono text-[0.7rem] tracking-wide text-muted">
         Click LinkedIn to open · click any other to copy
       </p>
     </motion.div>

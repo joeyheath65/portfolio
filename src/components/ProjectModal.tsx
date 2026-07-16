@@ -2,6 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
+
+import { useModalA11y } from "./useModalA11y";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -20,6 +23,9 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useModalA11y(isOpen, onClose, dialogRef);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -34,11 +40,16 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <motion.div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
+              tabIndex={-1}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.2 }}
-              className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-xl border border-[var(--line)] bg-[#0a1120]"
+              className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-xl border border-[var(--line)] bg-[#0a1120] focus:outline-none"
             >
               <div className="relative">
                 <button
@@ -64,7 +75,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                     />
                   </div>
 
-                  <h2 className="text-2xl font-extrabold text-paper sm:text-3xl">{project.title}</h2>
+                  <h2 id="project-modal-title" className="text-2xl font-extrabold text-paper sm:text-3xl">{project.title}</h2>
 
                   <div className="mt-4 flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (

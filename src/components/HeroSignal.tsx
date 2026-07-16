@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 /**
@@ -227,17 +228,28 @@ export default function HeroSignal() {
         ctx!.fill();
       }
 
-      raf = requestAnimationFrame(draw);
+      // Under reduced-motion, draw one static frame and stop repainting.
+      if (!reduce) raf = requestAnimationFrame(draw);
     }
 
     build();
     raf = requestAnimationFrame(draw);
 
     const onResize = () => build();
+    // Pause while the tab is hidden; resume on return.
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+      } else if (!reduce) {
+        raf = requestAnimationFrame(draw);
+      }
+    };
     window.addEventListener("resize", onResize);
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 
@@ -277,9 +289,9 @@ export default function HeroSignal() {
         </p>
 
         <div className="hs-cta-row">
-          <a href="/portfolio" className="hs-cta hs-cta-primary">
+          <Link href="/portfolio" className="hs-cta hs-cta-primary">
             See the work <span aria-hidden="true">→</span>
-          </a>
+          </Link>
           <a
             href="https://slotd.app"
             target="_blank"

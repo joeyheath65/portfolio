@@ -35,7 +35,7 @@ export default function ProjectCard({ title, description, tech, image, index, on
 
       <div className="p-5">
         <h3 className="text-lg font-bold text-paper">{title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-paper/60">{description}</p>
+        <p className="mt-2 text-sm leading-relaxed text-paper/75">{description}</p>
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {tech.slice(0, 5).map((t) => (

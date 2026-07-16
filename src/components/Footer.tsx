@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-4 text-center font-mono text-[0.7rem] tracking-wide text-muted/70">
+        <p className="mt-4 text-center font-mono text-[0.7rem] tracking-wide text-muted">
           © {year} Joe Heath · Lawn Dart! Systems, LLC
         </p>
       </div>
