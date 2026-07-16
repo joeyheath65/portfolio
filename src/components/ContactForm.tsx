@@ -1,8 +1,7 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import React, { FormEvent, useEffect, useRef, useState } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 
 const inputClass =
   "w-full rounded border border-[var(--line)] bg-[#0a1120] px-4 py-2.5 text-paper placeholder-muted/60 transition-colors focus:border-signal/60 focus:outline-none disabled:opacity-50";
@@ -16,42 +15,40 @@ export default function ContactForm() {
     message: string;
   }>({ type: null, message: "" });
 
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-    }
-  }, []);
-
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      if (
-        !form.current ||
-        !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
-        !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
-        !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      ) {
-        throw new Error("Missing EmailJS configuration");
+      const formEl = form.current;
+      if (!formEl) throw new Error("Form not available");
+
+      const fd = new FormData(formEl);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_name: fd.get("user_name"),
+          user_email: fd.get("user_email"),
+          service: fd.get("service"),
+          message: fd.get("message"),
+          company: fd.get("company"), // honeypot
+        }),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Request failed");
       }
 
-      const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
-
-      console.log("Email sent successfully:", result.text);
-      form.current.reset();
+      formEl.reset();
       setSubmitStatus({
         type: "success",
         message: "Message sent. I'll get back to you soon.",
       });
     } catch (error) {
-      console.error("Failed to send email:", error);
+      console.error("Failed to send message:", error);
       setSubmitStatus({
         type: "error",
         message: "Couldn't send the message. Please try again, or email me directly.",
@@ -63,6 +60,15 @@ export default function ContactForm() {
 
   return (
     <form ref={form} onSubmit={sendEmail} className="space-y-5">
+      {/* Honeypot: hidden from humans, bots tend to fill it. */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+      />
       <div>
         <label htmlFor="user_name" className={labelClass}>Name</label>
         <input

@@ -44,7 +44,6 @@ export const projects: Project[] = [
       "Responsive and modular design",
       "Multiple 3rd party integrations (Facebook, Google Calendar, etc.)",
     ],
-    githubLink: "https://github.com/joeyheath65/project1",
     liveDemo: "https://floresvillelittleleague.com",
   },
   {
@@ -62,7 +61,6 @@ export const projects: Project[] = [
       "OpenAI integration with function calling",
       "Google Cloud and Firebase backends",
     ],
-    githubLink: "https://github.com/joeyheath65/project2",
     liveDemo: "https://lawndart.dev",
   },
   {
@@ -80,7 +78,5 @@ export const projects: Project[] = [
       "User collaboration tools",
       "Network and system administration tools",
     ],
-    githubLink: "https://github.com/joeyheath65/project3",
-    liveDemo: "https://project3-demo.com",
   },
 ];

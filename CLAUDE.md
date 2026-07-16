@@ -48,8 +48,7 @@ This is the most important thing to understand before touching UI. The look is a
 
 ## Contact form / environment
 
-[src/components/ContactForm.tsx](src/components/ContactForm.tsx) sends mail client-side via EmailJS. It reads these `NEXT_PUBLIC_EMAILJS_*` vars from `.env.local` and no-ops/errors gracefully if they're missing:
-`NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`, `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`. The committed `.env.local` is empty — real values are configured in Vercel.
+The contact form posts JSON to a **server-side** route, [src/app/api/contact/route.ts](src/app/api/contact/route.ts), which sends mail via **Resend** (`resend` package). The API key stays on the server — read from `RESEND_API_KEY` (in `.env.local` locally; set in Vercel for prod). Mail is sent from `contact@lawndart.dev` (domain must be verified in Resend) to Joe's inbox, with the sender's address as `replyTo`. The `Resend` client is instantiated lazily **inside** the handler so a missing key never breaks the build. The form ([src/components/ContactForm.tsx](src/components/ContactForm.tsx)) includes a hidden `company` honeypot field; the route drops any submission that fills it and validates name/email/message server-side.
 
 ## Conventions
 

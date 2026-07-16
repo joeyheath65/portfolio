@@ -283,7 +283,7 @@ export default function HeroSignal() {
           <a
             href="https://slotd.app"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hs-cta hs-cta-ghost"
           >
             Try Slot&apos;d <span aria-hidden="true">↗</span>

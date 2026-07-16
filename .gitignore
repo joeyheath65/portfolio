@@ -43,3 +43,9 @@ next-env.d.ts
 
 # cursorrules
 .cursorrules
+
+# private working notes (candid review with links/PII — do not publish)
+PORTFOLIO-REVIEW.md
+
+# local Claude Code config
+.claude/
