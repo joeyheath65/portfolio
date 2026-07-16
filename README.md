@@ -1,7 +1,7 @@
 # Welcome to my Digital Portfolio
 
 ## Introduction
-This is a collection of network tools I've built over time. Many of these are old scripts that I blew some dust off and rebuilt. Before you ask, yes, I used an AI coding assistant to clean up the code and make my fancy menus and stuff. However, most of these I coded the base code without AI. Actually all of these I did, but then I figured I'd clean things up since I'm gonna actually share them with others to use.
+This is my personal portfolio site — built with Next.js, React, TypeScript, and Tailwind CSS, deployed serverless on Vercel. It showcases my work as a network engineer and full-stack developer, including Lawn Dart! Systems and its flagship product, Slot'd.
 
 ## Getting Started
 
