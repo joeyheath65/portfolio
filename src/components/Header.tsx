@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { socialLinks } from "@/lib/social";
+
 const menuItems = [
   { href: "/about", label: "About" },
   { href: "/portfolio", label: "Work" },
@@ -50,20 +52,38 @@ export default function Header() {
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-[0.14em]">
-            {menuItems.map((item) => {
-              const active = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`relative transition-colors ${active ? "text-signal" : "text-muted hover:text-paper"}`}
+          <div className="hidden items-center gap-6 md:flex">
+            <div className="flex items-center gap-8 font-mono text-xs uppercase tracking-[0.14em]">
+              {menuItems.map((item) => {
+                const active = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`relative transition-colors ${active ? "text-signal" : "text-muted hover:text-paper"}`}
+                  >
+                    {item.label}
+                    {active && <span className="absolute -bottom-1.5 left-0 h-px w-full bg-signal" />}
+                  </Link>
+                );
+              })}
+            </div>
+            <span aria-hidden="true" className="h-4 w-px bg-[var(--line)]" />
+            <div className="flex items-center gap-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={link.label}
+                  className="text-muted transition-colors hover:text-signal"
                 >
-                  {item.label}
-                  {active && <span className="absolute -bottom-1.5 left-0 h-px w-full bg-signal" />}
-                </Link>
-              );
-            })}
+                  <link.icon className="h-[18px] w-[18px]" />
+                  <span className="sr-only">{link.label}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -84,6 +104,22 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="flex items-center gap-5 pt-2">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={link.label}
+                  className="text-muted transition-colors hover:text-signal"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <link.icon className="h-5 w-5" />
+                  <span className="sr-only">{link.label}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
       </nav>

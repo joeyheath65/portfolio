@@ -1,11 +1,6 @@
 "use client";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-const socialLinks = [
-  { href: "https://github.com/joeyheath65", label: "GitHub", icon: FaGithub },
-  { href: "https://linkedin.com/in/josephheath", label: "LinkedIn", icon: FaLinkedin },
-];
+import { socialLinks } from "@/lib/social";
 
 export default function Footer() {
   const year = new Date().getFullYear();
