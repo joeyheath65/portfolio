@@ -8,6 +8,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import ExperienceCard from "@/components/ExperienceCard";
 import ExperienceDetails from "@/components/ExperienceDetails";
 import ProfileImage from "@/components/ProfileImage";
+import { certifications, education, highlights, profile, skillGroups, veteranNote } from "@/data/profile";
 import { socialLinks } from "@/lib/social";
 
 import { experienceData } from "./experienceData";
@@ -19,30 +20,6 @@ const sections = [
   { id: "credentials", label: "Credentials" },
   { id: "education", label: "Education" },
 ] as const;
-
-const skillGroups: { title: string; items: string[] }[] = [
-  {
-    title: "Development",
-    items: ["React / Next.js", "TypeScript", "Node.js", "Python", "Tailwind CSS", "Firebase", "PostgreSQL", "Stripe", "REST APIs"],
-  },
-  {
-    title: "AI & cloud",
-    items: ["Anthropic Claude", "OpenAI", "Vertex AI", "MCP / agents", "RAG", "AWS", "GCP", "Docker", "CI/CD"],
-  },
-  {
-    title: "Networking & security",
-    items: ["Network engineering", "Network security", "Wireless (Mist / Aruba)", "Automation & IaC", "SD-WAN / NAC", "System architecture", "Technical writing", "Team leadership"],
-  },
-];
-
-const certifications = ["Cisco CCNA", "CompTIA Security+", "SANS GIAC GSLC", "SANS GIAC GISP"];
-
-const highlights = [
-  "20+ years across network engineering and IT",
-  "15+ years leading technical teams",
-  "10+ years in security, automation, and scripting",
-  "U.S. Army — Sergeant First Class (E-7), Airborne; honorably retired",
-];
 
 /** Sticky "signal index" — a live-tracking section nav that echoes the header's green go-signal. */
 function SignalIndex({ active }: { active: string }) {
@@ -146,9 +123,7 @@ export default function AboutView() {
                     <span className="text-signal">◢</span> About
                   </p>
                   <h1 className="mb-2 text-4xl font-extrabold sm:text-5xl">Joe Heath</h1>
-                  <p className="mb-6 font-mono text-sm text-muted">
-                    Network engineer · full-stack developer · founder of Lawn Dart! Systems
-                  </p>
+                  <p className="mb-6 font-mono text-sm text-muted">{profile.title}</p>
                   <div className="space-y-5 text-paper/70">
                     <p>
                       Hi! First off, thank you for taking the time to visit. I&apos;m Joe Heath, an IT
@@ -251,8 +226,7 @@ export default function AboutView() {
                     ))}
                   </div>
                   <p className="border-t border-[var(--line)] pt-4 font-mono text-xs leading-relaxed text-muted">
-                    <span className="text-signal">◢</span> 100% service-connected disabled veteran ·
-                    veteran-owned business (SDVOSB-eligible)
+                    <span className="text-signal">◢</span> {veteranNote}
                   </p>
                 </div>
               </div>
@@ -265,18 +239,15 @@ export default function AboutView() {
               </p>
               <h2 className="mb-8 text-3xl font-extrabold sm:text-4xl">Foundations</h2>
               <div className="space-y-4">
-                <div className="card-3d p-6">
-                  <h3 className="text-base font-bold text-paper">B.S. in Business Administration</h3>
-                  <p className="mt-1 text-sm text-paper/70">Concentration in IT Management</p>
-                  <p className="mt-2 font-mono text-xs tracking-wide text-muted">University of the Incarnate Word · 2014</p>
-                </div>
-                <div className="card-3d p-6">
-                  <h3 className="text-base font-bold text-paper">U.S. Army — Information Systems &amp; Networks</h3>
-                  <p className="mt-1 text-sm text-paper/70">
-                    Information Systems Specialist (25B) &amp; Network Switching Systems (25F); Airborne School
-                  </p>
-                  <p className="mt-2 font-mono text-xs tracking-wide text-muted">2000 – 2010</p>
-                </div>
+                {education.map((ed) => (
+                  <div key={ed.degree} className="card-3d p-6">
+                    <h3 className="text-base font-bold text-paper">{ed.degree}</h3>
+                    <p className="mt-1 text-sm text-paper/70">{ed.detail}</p>
+                    <p className="mt-2 font-mono text-xs tracking-wide text-muted">
+                      {ed.org} · {ed.period}
+                    </p>
+                  </div>
+                ))}
               </div>
             </section>
 
@@ -286,6 +257,9 @@ export default function AboutView() {
                 Thanks for scrolling. From the wire to the web app — always happy to connect and trade notes.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
+                <Link href="/resume" className="btn-signal px-6 py-3 font-mono text-sm">
+                  View résumé →
+                </Link>
                 <Link href="/contact" className="btn-ghost px-6 py-3 font-mono text-sm">
                   Get in touch →
                 </Link>

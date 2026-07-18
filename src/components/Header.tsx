@@ -10,6 +10,7 @@ import { socialLinks } from "@/lib/social";
 const menuItems = [
   { href: "/about", label: "About" },
   { href: "/portfolio", label: "Work" },
+  { href: "/resume", label: "Résumé" },
   { href: "/contact", label: "Contact" },
   { href: "/blog", label: "Blog" },
 ];
@@ -23,7 +24,7 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed top-0 left-0 right-0 z-50 print:hidden"
     >
       <div className="absolute inset-0 backdrop-blur-md bg-[#060a12]/75" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-[var(--line)]" />
