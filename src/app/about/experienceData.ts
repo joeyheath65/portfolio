@@ -17,7 +17,7 @@ export const experienceData: ExperienceData[] = [
   {
     "logo": "/images/profile/lawndart.webp",
     "jobTitle": "Founder & Principal Engineer",
-    "company": "Lawn Dart Systems, LLC",
+    "company": "Lawn Dart! Systems, LLC",
     "dates": "2024 - Present",
     "duties": [
       "Run a 100% veteran-owned software studio (Texas LLC) across two lanes: a products division that ships real software and a services division (web, mobile, AI systems & automation) proven by that same software.",
