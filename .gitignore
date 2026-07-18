@@ -47,5 +47,8 @@ next-env.d.ts
 # private working notes (candid review with links/PII — do not publish)
 PORTFOLIO-REVIEW.md
 
+# consolidated career history (personal source-of-truth backing doc — do not publish)
+WORK_HISTORY.md
+
 # local Claude Code config
 .claude/
