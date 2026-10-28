@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      {
+        // Hidden Easter egg pages: keep them out of search and AI crawlers.
+        source: "/legal/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai" }],
+      },
     ];
   },
 };
