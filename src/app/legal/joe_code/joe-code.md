@@ -25,9 +25,9 @@ Short form on subsequent reference: **§ 31.01(a)(2)(B)**.
 
 | Title | Subject | Chapters |
 | --- | --- | --- |
-| **TITLE 1** | General Provisions | 1 – 4 |
+| **TITLE 1** | General Provisions | 1 – 5 |
 | **TITLE 2** | Capacity and Legal Personality | 6 |
-| **TITLE 3** | Rights Reserved to the Party | 11 – 15 |
+| **TITLE 3** | Rights Reserved to the Party | 11 – 16 |
 | **TITLE 4** | Offenses Against the Party | 21 – 25, 31 – 34 |
 | **TITLE 5** | Assessments, Billing, and Collections | 41 – 42 |
 | **TITLE 6** | Dispute Resolution and Appeals | 51 |
@@ -141,6 +141,28 @@ This Code shall be known and may be cited as the **Joe Code**.
 
 This Code establishes obligations, restrictions, and consequences binding upon Users. The Party makes no commitment or representation of any kind regarding the Party's own conduct, statements, or actions, except as expressly and specifically provided herein.
 
+### § 1.12. STATUS OF EXTERNAL INSTRUMENTS
+
+(a) **Informational and inapplicable by default.** Every term, condition, policy, ordinance, bylaw, rule, regulation, code of conduct, handbook, user agreement, posted notice, and like instrument promulgated by any person, body, or authority — governmental, corporate, institutional, associational, or otherwise, and regardless of the standing or jurisdiction claimed by its governing body — is, as to the Party, **informational and inapplicable**.
+
+(b) **Citation is satire.** Any use of, citation to, reference to, invocation of, quotation from, or reliance upon such an instrument in connection with the Party is conclusively presumed to be **humorous and satirical** in character, and is received by the Party as such. No such use creates an obligation, expectation, duty, or binding effect of any kind.
+
+(c) **Sole exception — consultation and agreement at creation.** An external instrument is applicable to the Party only where the Party was consulted during the creation of that instrument and affirmatively agreed to its terms at that time. Subsequent agreement, ratification, acquiescence, signature, employment, residency, membership, or continued acceptance of benefits does not satisfy this subsection. The consultation must have preceded or accompanied the instrument's creation.
+
+(d) **Evidentiary standard.** A person asserting the exception established by Subsection (c) bears the burden of proof. That burden is satisfied only by production of all three of the following:
+
+&nbsp;&nbsp;&nbsp;&nbsp;(1) video recording of the consultation and of the Party's agreement;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(2) the Party's signature; and
+
+&nbsp;&nbsp;&nbsp;&nbsp;(3) a deoxyribonucleic acid sample of the Party, matched.
+
+(e) **Conjunctive; no substitutes.** The items enumerated in Subsection (d) are conjunctive. Production of one or two of them establishes nothing. No substitute, equivalent, or secondary evidence is admissible, including testimony, electronic records, audit logs, metadata, timestamps, witness accounts, the recollection of any person, or the instrument itself.
+
+(f) **Applicability is not supremacy.** An external instrument that satisfies Subsection (c) becomes applicable but remains wholly subordinate to this Code under § 1.03. In the event of any conflict between such an instrument and this Code, this Code prevails in its entirety.
+
+(g) Whether an instrument satisfies Subsection (c) is determined solely by the Party under § 1.09, and is reviewable only under Chapter 51.
+
 ---
 
 ## CHAPTER 2 — SCOPE AND APPLICATION
@@ -243,27 +265,31 @@ In this Code:
 
 &nbsp;&nbsp;&nbsp;&nbsp;**(9) "Leading Question"** means any inquiry phrased or constructed so as to suggest a particular answer, presuppose facts not established, or guide the respondent toward a predetermined conclusion.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(10) "Party"** means Joseph R. Heath, in whichever State is operative under Chapter 6 at the relevant time.
+&nbsp;&nbsp;&nbsp;&nbsp;**(10) "Military"** has the meaning assigned by § 5.02.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(11) "Period of Estrangement"** means the remedy established by § 21.03, during which the offending User is dead to the Party.
+&nbsp;&nbsp;&nbsp;&nbsp;**(11) "Party"** means Joseph R. Heath, in whichever State is operative under Chapter 6 at the relevant time.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(12) "Period of Non-Resumption"** means the interval established by § 13.03, running from the Party's exercise of the right of cessation until the Monday next following, during which the Party owes no obligation with respect to the ceased undertaking.
+&nbsp;&nbsp;&nbsp;&nbsp;**(12) "Period of Estrangement"** means the remedy established by § 21.03, during which the offending User is dead to the Party.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(13) "Recounting"** means any narration, description, retelling, or detailed account of an event, occurrence, incident, or series of facts, whether personal, professional, legal, or otherwise.
+&nbsp;&nbsp;&nbsp;&nbsp;**(13) "Period of Non-Resumption"** means the interval established by § 13.03, running from the Party's exercise of the right of cessation until the Monday next following, during which the Party owes no obligation with respect to the ceased undertaking.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(14) "Social Interaction"** means any conversation, gathering, engagement, exchange, or co-presence undertaken for non-transactional purposes, including small talk, pleasantries, social functions, and any event whose primary purpose is the company of others.
+&nbsp;&nbsp;&nbsp;&nbsp;**(14) "Recounting"** means any narration, description, retelling, or detailed account of an event, occurrence, incident, or series of facts, whether personal, professional, legal, or otherwise.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(15) "Standard Rate"** means one hundred twenty dollars (USD $120.00) per hour, as established by § 42.01.
+&nbsp;&nbsp;&nbsp;&nbsp;**(15) "Right of Way"** means the entitlement established by Chapter 16, in every use and sense of the phrase.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(16) "State"** means one of the five graduated legal personae established by § 6.01, each a distinct legal person.
+&nbsp;&nbsp;&nbsp;&nbsp;**(16) "Social Interaction"** means any conversation, gathering, engagement, exchange, or co-presence undertaken for non-transactional purposes, including small talk, pleasantries, social functions, and any event whose primary purpose is the company of others.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(17) "Statutory Assessment"** means the flat monetary ceiling attached to an offense class by § 21.08.
+&nbsp;&nbsp;&nbsp;&nbsp;**(17) "Standard Rate"** means one hundred twenty dollars (USD $120.00) per hour, as established by § 42.01.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(18) "User"** means any person or entity bound by this Code under § 2.01.
+&nbsp;&nbsp;&nbsp;&nbsp;**(18) "State"** means one of the five graduated legal personae established by § 6.01, each a distinct legal person.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(19) "Warning"** means a communication issued by the Party under Chapter 24 indicating that a violation has occurred.
+&nbsp;&nbsp;&nbsp;&nbsp;**(19) "Statutory Assessment"** means the flat monetary ceiling attached to an offense class by § 21.08.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(20) "Work-Related Communication"** means any email, message, call, text, instant message, video conference, meeting request, or other contact pertaining to business matters, professional obligations, employment-related issues, projects, deliverables, deadlines, performance, or any matter arising from or related to the Party's professional or occupational capacity, **and which demands, requests, directs, or expects something of the Party.** A Courtesy Communication, as defined by Subdivision (4), is excluded.
+&nbsp;&nbsp;&nbsp;&nbsp;**(20) "User"** means any person or entity bound by this Code under § 2.01.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**(21) "Warning"** means a communication issued by the Party under Chapter 24 indicating that a violation has occurred.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**(22) "Work-Related Communication"** means any email, message, call, text, instant message, video conference, meeting request, or other contact pertaining to business matters, professional obligations, employment-related issues, projects, deliverables, deadlines, performance, or any matter arising from or related to the Party's professional or occupational capacity, **and which demands, requests, directs, or expects something of the Party.** A Courtesy Communication, as defined by Subdivision (4), is excluded.
 
 ### § 3.02. CONSTRUCTION OF UNDEFINED TERMS
 
@@ -308,6 +334,56 @@ The Party is under no obligation to excuse, waive, modify, or suspend any provis
 (a) The Party's failure to enforce any provision of this Code in any instance does not constitute a waiver of that provision in any subsequent instance.
 
 (b) A pattern of non-enforcement, however prolonged, creates no expectation, reliance interest, or defense.
+
+---
+
+## CHAPTER 5 — MATTERS OF SETTLED FACT
+
+### § 5.01. FACTS NOT SUBJECT TO DISPUTE
+
+(a) The matters declared in this Chapter are settled.
+
+(b) No evidence, argument, study, publication, authority, expert opinion, official designation, popular consensus, or appeal to any of the foregoing is admissible to contradict them.
+
+(c) An assertion contrary to this Chapter is void *ab initio* and requires no response, rebuttal, or acknowledgment from the Party. Section 14.06 applies: silence is a permitted and complete response.
+
+(d) **Not opinions.** The matters declared in this Chapter are facts, not positions of the Party. They therefore fall outside Chapter 12, and the Party's right to change position does not reach them. They are not subject to revision, reconsideration, or amendment.
+
+### § 5.02. MILITARY
+
+(a) The term **"military,"** wherever used or encountered by the Party, means the Army, the Air Force, the Navy, and the Marine Corps, and nothing else.
+
+(b) **space force.** The branch styled "space force" is not within Subsection (a). It does not merit consideration and shall not be capitalized in any writing of the Party, including where it begins a sentence.
+
+(c) **coast guard.** The coast guard is not within Subsection (a) and shall never be. The rule of non-capitalization in Subsection (b) applies to it with equal force.
+
+(d) **Scope limited to the words.** Nothing in this section addresses the character, service, sacrifice, or merit of any individual person. It addresses the terminology.
+
+### § 5.03. CANINE MINIMUM MASS
+
+(a) No dog exists at a mass below twenty (20) pounds.
+
+(b) **Puppy exception.** A juvenile animal of a breed that will attain twenty (20) pounds at maturity is a dog notwithstanding its present mass, for so long as it remains a juvenile.
+
+(c) **Classification of the remainder.** An animal presented as a dog that is below twenty (20) pounds and falls outside Subsection (b) is either a cat or a rat. The Party determines which, and that determination is final.
+
+(d) Registration papers, pedigree, breed standards, kennel-club recognition, veterinary records, and the assertions of the animal's owner are each inadmissible under § 5.01(b).
+
+### § 5.04. CATS
+
+(a) Cats are evil.
+
+(b) Subsection (a) is unqualified. It admits of no exception as to any particular cat, and evidence of affection, utility, companionship, vermin control, or charm offered as to an individual cat is inadmissible.
+
+(c) An animal classified as a cat under § 5.03(c) becomes subject to this section from the moment of classification.
+
+### § 5.05. DIE HARD
+
+(a) *Die Hard* is a Christmas movie.
+
+(b) The matter is settled and is not reopened by the approach, arrival, or passage of any December.
+
+(c) The year of release, the absence of a nativity, the quantity of ordnance discharged, and the contrary position of any other person are each immaterial and inadmissible.
 
 ---
 ---
@@ -556,6 +632,50 @@ The Party shall participate in the Recounting of any given event a maximum of on
 (b) The single permitted Recounting is final and conclusive unless the Party elects otherwise at sole discretion.
 
 (c) Conduct prohibited by this Chapter is addressed by § 31.03.
+
+---
+
+## CHAPTER 16 — RIGHT OF WAY
+
+### § 16.01. ABSOLUTE RIGHT OF WAY
+
+(a) The Party has the right of way.
+
+(b) Subsection (a) applies to every use, sense, and context of the phrase "right of way," without limitation as to setting, medium, mode of travel, or the nature of the passage at issue. Period.
+
+### § 16.02. CONTEXTS INCLUDED
+
+By way of illustration and not limitation, the right of way established by § 16.01 obtains:
+
+&nbsp;&nbsp;&nbsp;&nbsp;(1) at any intersection, merge, roundabout, turn, crossing, or lane change, regardless of signage, signal, lane marking, or order of arrival;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(2) at any four-way stop, irrespective of who arrived first;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(3) in any doorway, threshold, stairwell, elevator, escalator, hallway, corridor, or aisle;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(4) in any queue, line, or order of service;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(5) on any sidewalk, trail, path, ramp, boat ramp, or dock;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(6) in any grocery aisle, parking lot, or parking structure;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(7) in conversation, as to the order and priority of speaking; and
+
+&nbsp;&nbsp;&nbsp;&nbsp;(8) in any other circumstance in which two or more persons cannot simultaneously occupy the same space, moment, or turn.
+
+### § 16.03. IRRELEVANCE OF COMPETING ENTITLEMENT
+
+(a) That another person holds the right of way under a traffic law, posted sign, signal, rule of navigation, local custom, or rule of courtesy is immaterial. Sections 1.03 and 1.07 govern, and § 1.12 governs the instrument conferring it.
+
+(b) The Party is under no obligation to assert, announce, signal, gesture, or otherwise claim the right of way as a condition of holding it.
+
+### § 16.04. NO WAIVER BY YIELDING
+
+The Party may yield the right of way in any instance as a courtesy. Yielding is discretionary, establishes no precedent, and waives nothing in any subsequent instance. Section 4.06 applies.
+
+### § 16.05. OFFENSE
+
+Conduct prohibited by this Chapter is addressed by § 33.06.
 
 ---
 ---
@@ -1038,6 +1158,18 @@ A Warning is a courtesy and not a form of notice. Notice is accomplished by Chap
 
 (b) Any dispute regarding the accuracy of measurement is resolved in favor of the Party's device or assertion.
 
+### § 33.06. DEPRIVATION OF THE RIGHT OF WAY
+
+(a) A User commits an offense if the User takes, claims, asserts, or exercises the right of way in priority to the Party in any circumstance described by Chapter 16.
+
+(b) It is **not** a defense that the User held the right of way under any traffic law, signal, sign, rule of navigation, order of arrival, or rule of courtesy. Section 16.03(a) governs.
+
+(c) It is **not** a defense that the Party failed to assert, signal, or claim the right of way. Section 16.03(b) governs.
+
+(d) An offense under this section is a **Class B Violation**.
+
+(e) An offense under this section is a **Class A Violation** where committed from within a motor vehicle, or where the Party was thereby caused to stop, brake, slow, step aside, reverse, or alter course.
+
 ---
 
 ## CHAPTER 34 — OFFENSES AGAINST LEGAL PERSONALITY
@@ -1198,6 +1330,7 @@ The outcome of any trial by combat conducted under this Chapter is final, bindin
 | § 32.04 | Weaponized Reliance | Class B |
 | § 33.02 | Maintenance of Non-Conforming Environment | Class B / Class A if deliberate |
 | § 33.04 | Unlawful Detention in Non-Conforming Environment | **Capital** |
+| § 33.06 | Deprivation of the Right of Way | Class B / Class A if vehicular |
 | § 34.01 | Enforcement of a Cross-State Commitment | Class B / **Capital** at ceiling |
 | § 34.02 | Assertion of the Operative State | Class C |
 | § 42.06 | Failure to Remit | Class A |
@@ -1228,4 +1361,4 @@ Figures are maximums (§ 21.02(e)). Each repeat offense doubles the Statutory As
 
 ---
 
-*Chapter numbering leaves gaps (5, 7–10, 16–20, 26–30, 35–40, 43–50) to permit insertion of future Chapters without renumbering existing citations.*
+*Chapter numbering leaves gaps (7–10, 17–20, 26–30, 35–40, 43–50) to permit insertion of future Chapters without renumbering existing citations.*
