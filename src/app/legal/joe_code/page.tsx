@@ -51,6 +51,13 @@ const components: Components = {
   p: ({ children }) => <p className="my-3 whitespace-pre-line leading-relaxed">{children}</p>,
   strong: ({ children }) => <strong className="font-semibold text-paper">{children}</strong>,
   em: ({ children }) => <em className="text-muted">{children}</em>,
+  ul: ({ children }) => (
+    <ul className="my-3 list-disc space-y-1 pl-6 leading-relaxed marker:text-signal">{children}</ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="my-3 list-decimal space-y-1 pl-6 leading-relaxed marker:text-signal">{children}</ol>
+  ),
+  li: ({ children }) => <li className="pl-1">{children}</li>,
   hr: () => <hr className="my-10 border-[var(--line)]" />,
   blockquote: ({ children }) => (
     <blockquote className="my-6 border-l-2 border-signal pl-4 font-mono text-signal">{children}</blockquote>
