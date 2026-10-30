@@ -28,7 +28,7 @@ Short form on subsequent reference: **§ 31.01(a)(2)(B)**.
 | **TITLE 1** | General Provisions | 1 – 5 |
 | **TITLE 2** | Capacity and Legal Personality | 6 |
 | **TITLE 3** | Rights Reserved to the Party | 11 – 16 |
-| **TITLE 4** | Offenses Against the Party | 21 – 25, 31 – 34 |
+| **TITLE 4** | Offenses Against the Party | 21 – 26, 31 – 34 |
 | **TITLE 5** | Assessments, Billing, and Collections | 41 – 42 |
 | **TITLE 6** | Dispute Resolution and Appeals | 51 |
 
@@ -163,6 +163,18 @@ This Code establishes obligations, restrictions, and consequences binding upon U
 
 (g) Whether an instrument satisfies Subsection (c) is determined solely by the Party under § 1.09, and is reviewable only under Chapter 51.
 
+### § 1.13. AMENDMENT
+
+(a) The Party may amend, supplement, repeal, or restate any provision of this Code at any time, without notice to any User.
+
+(b) **Retroactive effect.** An amendment applies retroactively to all conduct preceding its adoption, in the same manner and to the same extent as § 1.06.
+
+(c) It is not a defense to a charge under an amended provision that the conduct occurred before the amendment was adopted, or that the conduct was permitted, unaddressed, or classified differently under the Code as it stood at the time.
+
+(d) No User acquires a vested interest in any provision of this Code as it stands at any moment. Sections 4.06 and 12.02 apply.
+
+(e) An amendment takes effect upon adoption by the Party, whether or not it has been published, posted, or communicated. Section 4.01(c) governs notice.
+
 ---
 
 ## CHAPTER 2 — SCOPE AND APPLICATION
@@ -239,6 +251,66 @@ Continued interaction with the Party constitutes affirmative, ongoing acceptance
 
 (d) **Determination.** Whether a communication falls within Subsection (a) is determined solely by the Party under § 1.09.
 
+### § 2.07. ENTITIES AS USERS
+
+(a) **Direct liability.** A company, corporation, partnership, agency, institution, association, or other organization is itself a User, independently of the natural persons comprising it, and may be charged, assessed, and placed under a Period of Estrangement as an entity.
+
+(b) **Estrangement of an entity.** A Period of Estrangement imposed upon an entity extends to every officer, employee, agent, and representative of that entity acting in that capacity, for the duration of the period.
+
+(c) **Agency.** Where a natural person commits an offense while acting as an agent of an entity, the entity is liable for that offense in addition to the person. Liability under this subsection is joint and several under § 22.03.
+
+(d) **Limit of agency.** Where the person was not acting as an agent of the entity, the entity bears no liability and the person alone is charged. Whether a person was acting as an agent is determined by the Party under § 1.09.
+
+(e) The enhancement for use of an intermediary under § 22.04 applies to an entity that directs a natural person to commit an offense on its behalf.
+
+### § 2.08. MINORS
+
+(a) A person who has not attained the age of majority is a User and is bound by this Code in full.
+
+(b) Age is not a defense, a mitigating circumstance, or a ground for reduced classification.
+
+(c) Nothing in this section limits the Party's discretion under §§ 21.06 and 21.09, which is where any accommodation for youth resides.
+
+### § 2.09. AUTOMATED SYSTEMS AND AGENTS
+
+(a) An offense may be committed by an automated system, including without limitation a scheduler, bot, alerting pipeline, ticketing system, monitoring platform, recurring calendar entry, mailing list, artificial-intelligence agent, or any program acting without contemporaneous human direction.
+
+(b) **Attribution.** Liability for an offense committed by an automated system flows to the person or entity that deployed, configured, scheduled, or maintains it, under § 22.02.
+
+(c) That the system acted without the knowledge, attention, or present intention of that person or entity is immaterial. Configuring a system that will commit an offense is itself the act of causing it.
+
+(d) An automated system is an intermediary for purposes of § 22.04. Routing a violation through automation is enhanced one class.
+
+### § 2.10. NON-HUMAN ANIMALS
+
+(a) A mammal is capable of committing an offense under this Code and is a User for that purpose.
+
+(b) A non-mammalian animal is not a User, is incapable of committing an offense, and is outside this Code entirely.
+
+(c) **Attribution.** Where a mammal commits an offense, liability attaches both to the mammal and to its owner, keeper, or handler under § 22.02.
+
+(d) An animal classified as a cat under § 5.03(c) is a mammal for purposes of this section and is subject to it accordingly. Section 5.04 is noted.
+
+### § 2.11. ESTATES AND SUCCESSION
+
+(a) This Code binds the estate, executor, administrator, trustee, heirs, and successors of any User.
+
+(b) The death of a User does not extinguish any assessment, interest, collection cost, or classification, and does not terminate a Period of Estrangement.
+
+(c) An unsatisfied assessment is a claim against the User's estate and survives until satisfied.
+
+(d) A Period of Estrangement in effect at the time of a User's death continues against the estate and its representatives for its stated duration.
+
+### § 2.12. NO LIMITATIONS PERIOD
+
+(a) There is no limitations period under this Code.
+
+(b) A violation is chargeable at any time after its commission, without regard to how much time has elapsed, and whether or not the Party was aware of it at the time.
+
+(c) Delay in charging a violation, however prolonged, is not a bar, a waiver, a defense, or a ground for mitigation. Sections 4.06 and 23.01 apply.
+
+(d) The absence of any record of a violation does not bar its prosecution. Section 4.07 governs.
+
 ---
 
 ## CHAPTER 3 — DEFINITIONS
@@ -253,43 +325,45 @@ In this Code:
 
 &nbsp;&nbsp;&nbsp;&nbsp;**(3) "Conforming Environment"** means an Indoor Facility maintained at an ambient interior temperature not exceeding seventy-six degrees Fahrenheit (76°F). An Indoor Facility exceeding that threshold is a **"Non-Conforming Environment."**
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(4) "Courtesy Communication"** means a communication that conveys information for the Party's benefit and that demands, requests, directs, or expects nothing of the Party, including no reply. A Courtesy Communication is the conversational equivalent of a notice that the floor is wet. It is not Work-Related Communication and gives rise to no offense under this Code, regardless of hour, day, or subject matter. A communication that conveys information and also demands, requests, or expects something is not a Courtesy Communication.
+&nbsp;&nbsp;&nbsp;&nbsp;**(4) "Coordinated Violation"** means a violation committed by two or more Users acting in concert, as established by § 26.01.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(5) "Criticism"** means any evaluative commentary, correction, assessment, or negative characterization directed at the Party or the Party's work, conduct, judgment, methods, or output.
+&nbsp;&nbsp;&nbsp;&nbsp;**(5) "Courtesy Communication"** means a communication that conveys information for the Party's benefit and that demands, requests, directs, or expects nothing of the Party, including no reply. A Courtesy Communication is the conversational equivalent of a notice that the floor is wet. It is not Work-Related Communication and gives rise to no offense under this Code, regardless of hour, day, or subject matter. A communication that conveys information and also demands, requests, or expects something is not a Courtesy Communication.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(6) "Direction"** means any instruction, command, assignment, requirement, or expression of expected conduct directed at the Party.
+&nbsp;&nbsp;&nbsp;&nbsp;**(6) "Criticism"** means any evaluative commentary, correction, assessment, or negative characterization directed at the Party or the Party's work, conduct, judgment, methods, or output.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(7) "Household Member"** means a person who resides in the Party's household.
+&nbsp;&nbsp;&nbsp;&nbsp;**(7) "Direction"** means any instruction, command, assignment, requirement, or expression of expected conduct directed at the Party.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(8) "Indoor Facility"** means any enclosed building, structure, residence, venue, vehicle cabin, room, or space wherein the Party's physical presence is requested, expected, or accommodated.
+&nbsp;&nbsp;&nbsp;&nbsp;**(8) "Household Member"** means a person who resides in the Party's household.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(9) "Leading Question"** means any inquiry phrased or constructed so as to suggest a particular answer, presuppose facts not established, or guide the respondent toward a predetermined conclusion.
+&nbsp;&nbsp;&nbsp;&nbsp;**(9) "Indoor Facility"** means any enclosed building, structure, residence, venue, vehicle cabin, room, or space wherein the Party's physical presence is requested, expected, or accommodated.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(10) "Military"** has the meaning assigned by § 5.02.
+&nbsp;&nbsp;&nbsp;&nbsp;**(10) "Leading Question"** means any inquiry phrased or constructed so as to suggest a particular answer, presuppose facts not established, or guide the respondent toward a predetermined conclusion.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(11) "Party"** means Joseph R. Heath, in whichever State is operative under Chapter 6 at the relevant time.
+&nbsp;&nbsp;&nbsp;&nbsp;**(11) "Military"** has the meaning assigned by § 5.02.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(12) "Period of Estrangement"** means the remedy established by § 21.03, during which the offending User is dead to the Party.
+&nbsp;&nbsp;&nbsp;&nbsp;**(12) "Party"** means Joseph R. Heath, in whichever State is operative under Chapter 6 at the relevant time.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(13) "Period of Non-Resumption"** means the interval established by § 13.03, running from the Party's exercise of the right of cessation until the Monday next following, during which the Party owes no obligation with respect to the ceased undertaking.
+&nbsp;&nbsp;&nbsp;&nbsp;**(13) "Period of Estrangement"** means the remedy established by § 21.03, during which the offending User is dead to the Party.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(14) "Recounting"** means any narration, description, retelling, or detailed account of an event, occurrence, incident, or series of facts, whether personal, professional, legal, or otherwise.
+&nbsp;&nbsp;&nbsp;&nbsp;**(14) "Period of Non-Resumption"** means the interval established by § 13.03, running from the Party's exercise of the right of cessation until the Monday next following, during which the Party owes no obligation with respect to the ceased undertaking.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(15) "Right of Way"** means the entitlement established by Chapter 16, in every use and sense of the phrase.
+&nbsp;&nbsp;&nbsp;&nbsp;**(15) "Recounting"** means any narration, description, retelling, or detailed account of an event, occurrence, incident, or series of facts, whether personal, professional, legal, or otherwise.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(16) "Social Interaction"** means any conversation, gathering, engagement, exchange, or co-presence undertaken for non-transactional purposes, including small talk, pleasantries, social functions, and any event whose primary purpose is the company of others.
+&nbsp;&nbsp;&nbsp;&nbsp;**(16) "Right of Way"** means the entitlement established by Chapter 16, in every use and sense of the phrase.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(17) "Standard Rate"** means one hundred twenty dollars (USD $120.00) per hour, as established by § 42.01.
+&nbsp;&nbsp;&nbsp;&nbsp;**(17) "Social Interaction"** means any conversation, gathering, engagement, exchange, or co-presence undertaken for non-transactional purposes, including small talk, pleasantries, social functions, and any event whose primary purpose is the company of others.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(18) "State"** means one of the five graduated legal personae established by § 6.01, each a distinct legal person.
+&nbsp;&nbsp;&nbsp;&nbsp;**(18) "Standard Rate"** means one hundred twenty dollars (USD $120.00) per hour, as established by § 42.01.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(19) "Statutory Assessment"** means the flat monetary ceiling attached to an offense class by § 21.08.
+&nbsp;&nbsp;&nbsp;&nbsp;**(19) "State"** means one of the five graduated legal personae established by § 6.01, each a distinct legal person.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(20) "User"** means any person or entity bound by this Code under § 2.01.
+&nbsp;&nbsp;&nbsp;&nbsp;**(20) "Statutory Assessment"** means the flat monetary ceiling attached to an offense class by § 21.08.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(21) "Warning"** means a communication issued by the Party under Chapter 24 indicating that a violation has occurred.
+&nbsp;&nbsp;&nbsp;&nbsp;**(21) "User"** means any person or entity bound by this Code under § 2.01.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**(22) "Work-Related Communication"** means any email, message, call, text, instant message, video conference, meeting request, or other contact pertaining to business matters, professional obligations, employment-related issues, projects, deliverables, deadlines, performance, or any matter arising from or related to the Party's professional or occupational capacity, **and which demands, requests, directs, or expects something of the Party.** A Courtesy Communication, as defined by Subdivision (4), is excluded.
+&nbsp;&nbsp;&nbsp;&nbsp;**(22) "Warning"** means a communication issued by the Party under Chapter 24 indicating that a violation has occurred.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**(23) "Work-Related Communication"** means any email, message, call, text, instant message, video conference, meeting request, or other contact pertaining to business matters, professional obligations, employment-related issues, projects, deliverables, deadlines, performance, or any matter arising from or related to the Party's professional or occupational capacity, **and which demands, requests, directs, or expects something of the Party.** A Courtesy Communication, as defined by Subdivision (5), is excluded.
 
 ### § 3.02. CONSTRUCTION OF UNDEFINED TERMS
 
@@ -334,6 +408,18 @@ The Party is under no obligation to excuse, waive, modify, or suspend any provis
 (a) The Party's failure to enforce any provision of this Code in any instance does not constitute a waiver of that provision in any subsequent instance.
 
 (b) A pattern of non-enforcement, however prolonged, creates no expectation, reliance interest, or defense.
+
+### § 4.07. BURDEN OF RECORD-KEEPING
+
+(a) The Party is under no obligation to record, log, document, date, or otherwise preserve evidence of any violation.
+
+(b) **Burden on the offender.** It is the burden of every User to track, record, and maintain an accurate account of that User's own violations, including their number, dates, classifications, and the remedies imposed.
+
+(c) **Absence of records is no bar.** The absence of any record, whether the Party's or the User's, does not bar prosecution, limit classification, or constrain any remedy. The Party's recollection is sufficient and is not subject to challenge under § 1.09.
+
+(d) **Discrepancy.** Where a User's records conflict with the Party's account, the Party's account controls absolutely.
+
+(e) A User's failure to maintain records under Subsection (b) is not itself an offense, but operates wholly to that User's detriment in every determination under this Code, including escalation under §§ 21.07 and 21.10.
 
 ---
 
@@ -457,6 +543,24 @@ The Party is under no obligation to excuse, waive, modify, or suspend any provis
 ### § 6.07. NO ESTOPPEL BETWEEN STATES
 
 No State may be bound by the prior acts, statements, or commitments of any other State as grounds for estoppel, waiver, or modification. The doctrines of promissory estoppel, detrimental reliance, and any equitable principle premised on prior conduct do not apply between the States.
+
+### § 6.08. STATES AS USERS
+
+(a) Because each State is a distinct legal person under § 6.01, each State is a **User** with respect to every other State, and is bound by this Code accordingly.
+
+(b) A State may commit an offense against another State. The offense is charged under § 34.03.
+
+(c) **No self-charge.** A State may not be charged with an offense against itself.
+
+(d) **Remedies between States.** The remedies available for an offense between States are limited to:
+
+&nbsp;&nbsp;&nbsp;&nbsp;(1) a Period of Estrangement, under which the offending State is dead to the aggrieved State; and
+
+&nbsp;&nbsp;&nbsp;&nbsp;(2) any non-monetary remedy otherwise available for the class of the offense.
+
+(e) **No monetary assessment between States.** A Statutory Assessment and an assessment at the Standard Rate are unavailable as between States, the Party being both obligor and obligee. Chapters 41 and 42 do not apply to an offense under § 34.03.
+
+(f) The Sober State determines whether an offense between States has occurred, under §§ 6.03 and 1.09, including where the Sober State is itself the offending State.
 
 ---
 ---
@@ -692,13 +796,19 @@ Conduct prohibited by this Chapter is addressed by § 33.06.
 
 &nbsp;&nbsp;&nbsp;&nbsp;(2) Class B Violation;
 
-&nbsp;&nbsp;&nbsp;&nbsp;(3) Class A Violation; and
+&nbsp;&nbsp;&nbsp;&nbsp;(3) Class A Violation;
 
-&nbsp;&nbsp;&nbsp;&nbsp;(4) Capital Violation.
+&nbsp;&nbsp;&nbsp;&nbsp;(4) Felony; and
+
+&nbsp;&nbsp;&nbsp;&nbsp;(5) Capital Violation.
 
 (b) Each offense-defining section specifies the class of the offense. Where a section specifies no class, the offense is a Class B Violation.
 
 (c) Class C and Class B Violations are **minor offenses** for purposes of Chapter 24.
+
+(d) **Felony not a starting class.** No offense-defining section classifies an offense as a Felony at first instance. The Felony class is reached only by operation of § 21.07 (repetition), § 21.10 (aggregation), § 22.04 (intermediary), or § 26.03 (coordination).
+
+(e) The Code recognizes no degrees within any class. Severity is expressed by class alone.
 
 ### § 21.02. SCHEDULE OF REMEDIES
 
@@ -732,7 +842,19 @@ Conduct prohibited by this Chapter is addressed by § 33.06.
 
 &nbsp;&nbsp;&nbsp;&nbsp;(5) any remedy available for a Class B or Class C Violation.
 
-(d) A **Capital Violation** is punishable by any one or more of:
+(d) A **Felony** is punishable by any one or more of:
+
+&nbsp;&nbsp;&nbsp;&nbsp;(1) a Period of Estrangement of indefinite or permanent duration;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(2) a Statutory Assessment not exceeding two thousand five hundred dollars (USD $2,500.00) under § 21.08;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(3) assessment at the Standard Rate under Chapter 42, including assessment for pain and suffering under § 42.05;
+
+&nbsp;&nbsp;&nbsp;&nbsp;(4) escalation to trial by combat under Chapter 51 at the Party's election; and
+
+&nbsp;&nbsp;&nbsp;&nbsp;(5) any remedy available for a Class A, Class B, or Class C Violation.
+
+(e) A **Capital Violation** is punishable by any one or more of:
 
 &nbsp;&nbsp;&nbsp;&nbsp;(1) a permanent Period of Estrangement;
 
@@ -742,11 +864,11 @@ Conduct prohibited by this Chapter is addressed by § 33.06.
 
 &nbsp;&nbsp;&nbsp;&nbsp;(4) escalation to trial by combat under Chapter 51 at the Party's election; and
 
-&nbsp;&nbsp;&nbsp;&nbsp;(5) any remedy available for a Class A, Class B, or Class C Violation.
+&nbsp;&nbsp;&nbsp;&nbsp;(5) any remedy available for a Felony or for a Class A, Class B, or Class C Violation.
 
-(e) **Maximums, not mandates.** The remedies and figures set out in this section are **ceilings**. They state the maximum exposure for each class. The Party is not required to impose any remedy, may impose fewer than all available remedies, and may impose less than the stated maximum, in each case without prejudice to future enforcement. Reduction below a stated ceiling is governed by § 21.09.
+(f) **Maximums, not mandates.** The remedies and figures set out in this section are **ceilings**. They state the maximum exposure for each class. The Party is not required to impose any remedy, may impose fewer than all available remedies, and may impose less than the stated maximum, in each case without prejudice to future enforcement. Reduction below a stated ceiling is governed by § 21.09.
 
-(f) Selection among available remedies is at the Party's sole discretion.
+(g) Selection among available remedies is at the Party's sole discretion.
 
 ### § 21.03. PERIOD OF ESTRANGEMENT
 
@@ -800,9 +922,11 @@ Conduct prohibited by this Chapter is addressed by § 33.06.
 
 &nbsp;&nbsp;&nbsp;&nbsp;(2) Class B Violation — two hundred fifty dollars (USD $250.00);
 
-&nbsp;&nbsp;&nbsp;&nbsp;(3) Class A Violation — one thousand dollars (USD $1,000.00); and
+&nbsp;&nbsp;&nbsp;&nbsp;(3) Class A Violation — one thousand dollars (USD $1,000.00);
 
-&nbsp;&nbsp;&nbsp;&nbsp;(4) Capital Violation — five thousand dollars (USD $5,000.00), in addition to assessment at the Standard Rate.
+&nbsp;&nbsp;&nbsp;&nbsp;(4) Felony — two thousand five hundred dollars (USD $2,500.00), in addition to assessment at the Standard Rate; and
+
+&nbsp;&nbsp;&nbsp;&nbsp;(5) Capital Violation — five thousand dollars (USD $5,000.00), in addition to assessment at the Standard Rate.
 
 (c) **Compounding.** Each repeat offense by the same User compounds the Statutory Assessment. The ceiling for the second offense is twice the ceiling otherwise applicable; for the third, four times; and so forth, doubling with each successive offense without limit.
 
@@ -833,6 +957,20 @@ Conduct prohibited by this Chapter is addressed by § 33.06.
 (d) **No precedent.** Leniency granted in one case establishes nothing as to any other case, any other User, or any subsequent offense by the same User. Consistent with § 4.06, a pattern of leniency creates no expectation or reliance interest.
 
 (e) **No bar to escalation.** Leniency granted on a first offense does not reduce, reset, or forgive the offense for purposes of § 21.07 or § 21.08(c). The offense remains counted.
+
+### § 21.10. STACKING AND AGGREGATION
+
+(a) **Penalties stack.** Where a User stands liable for more than one offense, the remedies for each offense are imposed in addition to one another. Statutory Assessments are summed, Periods of Estrangement run consecutively unless the Party directs otherwise, and no remedy is absorbed into, merged with, or satisfied by any other.
+
+(b) **No concurrent service.** There is no concurrent service of Periods of Estrangement, and no credit against one remedy for another remedy already imposed or satisfied.
+
+(c) **Aggregation to Felony.** Where a User has committed two (2) or more Class A Violations, whether of the same section or of different sections, the Party may treat them in the aggregate as a **Felony**, in addition to the remedies available for each underlying violation.
+
+(d) **Discretionary.** Aggregation under Subsection (c) is at the Party's election. Declining to aggregate in one instance neither forecloses aggregation later nor establishes anything under § 21.06.
+
+(e) **Relation to other escalation.** Aggregation under this section operates independently of, and in addition to, classification escalation under § 21.07, enhancement under § 22.04, and coordination under § 26.03. Where more than one escalation mechanism applies to the same conduct, each applies. This multiple operation is intentional, consistent with § 21.07(c).
+
+(f) **Ceiling.** Where the combined operation of this section and §§ 21.07, 22.04, and 26.03 would carry an offense above the Capital Violation, it is a Capital Violation and § 21.07(b) applies.
 
 ---
 
@@ -900,7 +1038,7 @@ That the actor was instructed, directed, required, or employed to perform the co
 
 (a) Conduct that does not fall within a conduct-defining section is not an offense, and no defense is required to establish that.
 
-(b) By way of illustration: a Courtesy Communication under § 3.01(4) is not Work-Related Communication and therefore commits no offense under Chapter 31. This is a matter of definition, not of defense. The Party extends such communication the respect it is due.
+(b) By way of illustration: a Courtesy Communication under § 3.01(5) is not Work-Related Communication and therefore commits no offense under Chapter 31. This is a matter of definition, not of defense. The Party extends such communication the respect it is due.
 
 (c) A communication that conveys information for the Party's benefit **and** demands something of the Party is not within Subsection (b). The demand is the offense, and the accompanying benefit neither excuses nor reduces it.
 
@@ -1000,6 +1138,54 @@ A Warning is a courtesy and not a form of notice. Notice is accomplished by Chap
 
 ---
 
+## CHAPTER 26 — COORDINATED VIOLATIONS
+
+### § 26.01. COORDINATED VIOLATION DEFINED
+
+(a) A **Coordinated Violation** occurs where two (2) or more Users act in concert to commit, cause, facilitate, or conceal one or more offenses against the Party.
+
+(b) **Acting in concert** includes planning, agreeing, dividing responsibility, sequencing conduct, coordinating timing, recruiting a participant, or proceeding with knowledge that another is participating.
+
+(c) **No formal agreement required.** A shared understanding is sufficient. No express agreement, written plan, organizational structure, or communication among participants need be proven.
+
+(d) **Enterprise.** Two or more Users engaged in a Coordinated Violation constitute an **enterprise** for purposes of this Chapter, whether or not they share any other affiliation.
+
+(e) Whether conduct constitutes a Coordinated Violation is determined solely by the Party under § 1.09.
+
+### § 26.02. OFFENSE
+
+(a) A User commits an offense if the User participates in a Coordinated Violation.
+
+(b) The offense under this section is distinct from, and charged in addition to, the underlying offense or offenses committed by the enterprise.
+
+### § 26.03. ENTERPRISE LIABILITY
+
+(a) **Each for all.** Every participant in a Coordinated Violation is liable for **every** offense committed by any participant in furtherance of it, whether or not that participant performed, knew of, or was present for the particular offense.
+
+(b) **Classification.** A Coordinated Violation is classified as a **Felony** at minimum, irrespective of the class of the underlying offenses.
+
+(c) **Capital where the underlying offense is Capital.** Where any offense committed in furtherance of the enterprise is a Capital Violation, the Coordinated Violation is a Capital Violation as to every participant.
+
+(d) **Organizers.** A participant who planned, initiated, recruited for, or directed the enterprise is subject to the enhancement under § 22.04 in addition to the classification under Subsection (b).
+
+(e) **Assessments are not divided.** The Statutory Assessment is imposed on each participant in full. It is not apportioned, shared, or reduced by reason of the number of participants.
+
+### § 26.04. WITHDRAWAL
+
+(a) A participant may withdraw from an enterprise only by affirmatively disclosing the Coordinated Violation to the Party before any offense in furtherance of it is committed.
+
+(b) Withdrawal after an offense has been committed is not withdrawal. It is neither a defense nor a mitigating circumstance, though it may be considered under § 21.09.
+
+(c) Ceasing to participate, declining to continue, remaining silent, or failing to attend does not constitute withdrawal.
+
+### § 26.05. RELATION TO GROUP LIABILITY GENERALLY
+
+(a) Where multiple Users independently commit the same offense against the Party without acting in concert — including every recipient of a single communication, invitation, or notice — each is independently liable for that offense, and this Chapter does not apply.
+
+(b) Independent simultaneous liability under Subsection (a) does not become a Coordinated Violation by reason of simultaneity, common employer, common distribution list, or shared motive.
+
+---
+
 ## CHAPTER 31 — OFFENSES AGAINST TEMPORAL BOUNDARIES
 
 ### § 31.01. UNTIMELY WORK-RELATED COMMUNICATION
@@ -1018,7 +1204,7 @@ A Warning is a courtesy and not a form of notice. Notice is accomplished by Chap
 
 &nbsp;&nbsp;&nbsp;&nbsp;(4) the User did not expect a response until the following week.
 
-(d) **Courtesy Communication excluded.** A Courtesy Communication under § 3.01(4) is not Work-Related Communication and does not constitute an offense under this section, at any hour. A communication within § 2.06 is likewise exempt.
+(d) **Courtesy Communication excluded.** A Courtesy Communication under § 3.01(5) is not Work-Related Communication and does not constitute an offense under this section, at any hour. A communication within § 2.06 is likewise exempt.
 
 (e) An offense under this section is a **Class A Violation**.
 
@@ -1198,6 +1384,18 @@ A Warning is a courtesy and not a form of notice. Notice is accomplished by Chap
 
 (c) An offense under this section is a **Class C Violation**.
 
+### § 34.03. INTER-STATE OFFENSE
+
+(a) A State commits an offense if the State engages in conduct that would constitute an offense under this Code were it committed by any other User.
+
+(b) **Illustrations.** Without limitation, a State commits an offense under this section by initiating Work-Related Communication reaching another State after the hour fixed by § 31.01; by compelling another State's participation in Social Interaction; by depriving another State of the right of way; or by leaving another State in a Non-Conforming Environment.
+
+(c) **Classification.** The offense bears the class the conduct would bear if committed by any other User, subject to the remedial limits in § 6.08(d) and (e).
+
+(d) **No defense of shared identity.** That the offending State and the aggrieved State are the same natural person is not a defense. Section 6.01 governs, and Chapter 23 bars the defense in any event.
+
+(e) The performance-matching doctrine under § 6.05 is not an offense under this section. A State rendering performance on its own commitment commits nothing.
+
 ---
 ---
 
@@ -1277,6 +1475,28 @@ Failure to remit payment within the period established by § 42.03(b) accrues in
 
 (b) An offense under this section is a **Class A Violation**, in addition to the accrual of interest under § 42.04 and the collection costs billable under § 21.08(f).
 
+### § 42.07. PAYMENT IN KIND
+
+(a) The Party may, at sole election, accept tender in kind — including whiskey, beer, goods, labor, or services — in full or partial satisfaction of any amount owed under this Code.
+
+(b) **Valuation.** The Party determines the value credited to any tender in kind. That determination is final and is not required to bear any relation to market value, replacement cost, or the cost borne by the tendering User.
+
+(c) **No right to tender.** A User has no right to satisfy an obligation in kind. The Party may refuse any tender, in whole or in part, without explanation.
+
+(d) **Refusal is not satisfaction.** Refusal of a tender in kind does not reduce, suspend, or discharge the amount owed, and does not stay the accrual of interest under § 42.04.
+
+(e) **Distinguished from mitigation.** A tender accepted under this section is credited against an amount owed. An offering under § 21.09(b) seeks reduction of the remedy itself. The two are distinct, may be pursued together, and neither implies the other.
+
+### § 42.08. ASSIGNMENT AND COLLECTION
+
+(a) The Party may assign, sell, transfer, or refer any amount owed under this Code to any third party for collection or satisfaction, without notice to or consent of the User.
+
+(b) **Offender bears the cost.** All costs of assignment, referral, and collection — including any discount, fee, commission, or margin taken by the assignee, and all time expended by the Party in effecting the assignment — are added to the amount owed and borne by the offending User.
+
+(c) An assignee stands in the Party's position as to the amount assigned, but acquires no authority to interpret this Code, determine classification, impose remedies, or grant leniency. Those powers remain exclusively with the Party under § 1.04.
+
+(d) Assignment does not discharge, reduce, or suspend any non-monetary remedy, including any Period of Estrangement.
+
 ---
 ---
 
@@ -1314,6 +1534,18 @@ The outcome of any trial by combat conducted under this Chapter is final, bindin
 
 (b) An appeal does not stay any remedy, assessment, or Period of Estrangement pending its resolution.
 
+### § 51.07. SELECTION OF THE STATE APPEARING FOR THE PARTY
+
+(a) Where the Party appears in a trial by combat, the Party selects which State under § 6.01 appears.
+
+(b) The selection is made at the Party's sole discretion, may be made or changed at any time before combat commences, and requires no notice to the User.
+
+(c) The State selected need not be the State whose determination, conduct, or commitment is the subject of the dispute.
+
+(d) No User may request, object to, stipulate to, or offer evidence regarding the selection. An attempt to do so is an offense under § 34.02.
+
+(e) In a trial by combat arising from an offense under § 34.03, the Sober State selects the State appearing for each side.
+
 ---
 ---
 
@@ -1321,6 +1553,7 @@ The outcome of any trial by combat conducted under this Chapter is final, bindin
 
 | Section | Offense | Class |
 | --- | --- | --- |
+| § 26.02 | Participation in a Coordinated Violation | **Felony** / **Capital** per § 26.03(c) |
 | § 31.01 | Untimely Work-Related Communication | Class A |
 | § 31.02 | Solicitation During Period of Non-Resumption | Class B |
 | § 31.03 | Demand for Repeat Recounting | Class C |
@@ -1333,9 +1566,10 @@ The outcome of any trial by combat conducted under this Chapter is final, bindin
 | § 33.06 | Deprivation of the Right of Way | Class B / Class A if vehicular |
 | § 34.01 | Enforcement of a Cross-State Commitment | Class B / **Capital** at ceiling |
 | § 34.02 | Assertion of the Operative State | Class C |
+| § 34.03 | Inter-State Offense | per underlying conduct |
 | § 42.06 | Failure to Remit | Class A |
 
-Classification is subject to enhancement one class higher for use of an intermediary (§ 22.04) and one class higher for repetition (§ 21.07).
+**Escalation.** A classification above is a starting point. It rises one class for repetition of the same section (§ 21.07), one class for use of an intermediary or automation (§ 22.04), to Felony where two or more Class A Violations are aggregated (§ 21.10(c)), and to Felony or Capital where the conduct was coordinated (§ 26.03). These mechanisms operate independently and cumulatively, capped at the Capital Violation (§ 21.10(f)).
 
 ---
 
@@ -1346,9 +1580,10 @@ Classification is subject to enhancement one class higher for use of an intermed
 | Class C | — | — | — |
 | Class B | $250 | time consumed | 30 days |
 | Class A | $1,000 | time consumed | indefinite |
+| Felony | $2,500 | time consumed + § 42.05 | indefinite or permanent |
 | Capital | $5,000 | time consumed + § 42.05 | permanent |
 
-Figures are maximums (§ 21.02(e)). Each repeat offense doubles the Statutory Assessment ceiling (§ 21.08(c)). Interest accrues at 1.5% monthly (§ 21.08(e)). Collection effort is billable at the Standard Rate without cap (§ 21.08(f)).
+Figures are maximums (§ 21.02(f)). Each repeat offense doubles the Statutory Assessment ceiling (§ 21.08(c)). Penalties for separate offenses stack and are summed; Periods of Estrangement run consecutively (§ 21.10(a)–(b)). Interest accrues at 1.5% monthly (§ 21.08(e)). Collection effort is billable at the Standard Rate without cap (§ 21.08(f)), and assignment costs are borne by the offender (§ 42.08(b)). Tender in kind may be accepted at the Party's election and valuation (§ 42.07). No monetary assessment lies between States (§ 6.08(e)).
 
 ---
 
@@ -1361,4 +1596,4 @@ Figures are maximums (§ 21.02(e)). Each repeat offense doubles the Statutory As
 
 ---
 
-*Chapter numbering leaves gaps (7–10, 17–20, 26–30, 35–40, 43–50) to permit insertion of future Chapters without renumbering existing citations.*
+*Chapter numbering leaves gaps (7–10, 17–20, 27–30, 35–40, 43–50) to permit insertion of future Chapters without renumbering existing citations.*
